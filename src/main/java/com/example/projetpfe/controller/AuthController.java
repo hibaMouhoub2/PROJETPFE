@@ -12,6 +12,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.security.Principal;
 import java.util.Collection;
@@ -32,10 +33,10 @@ public class AuthController {
         return "index";
     }
 
-    @GetMapping("/login")
-    public String loginForm() {
-        return "login";
-    }
+    //@GetMapping("/login")
+    //public String loginForm() {
+      //  return "login";
+    //}
 
     // handler method to handle user registration request
     @GetMapping("register")
@@ -80,6 +81,18 @@ public class AuthController {
         } else {
             return "redirect:/index";
         }
+    }
+    @GetMapping("/login")
+    public String loginForm(Model model,
+                            @RequestParam(required = false) boolean blocked,
+                            @RequestParam(required = false) Long remaining) {
+        if (blocked) {
+            model.addAttribute("isBlocked", true);
+            if (remaining != null) {
+                model.addAttribute("remainingMinutes", remaining);
+            }
+        }
+        return "login";
     }
 
 
