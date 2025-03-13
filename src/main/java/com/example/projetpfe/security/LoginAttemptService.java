@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class LoginAttemptService {
     private final int MAX_ATTEMPT = 5;
-    private final int BLOCK_DURATION_MINUTES = 30; // Durée de blocage en minutes
+    private final int BLOCK_DURATION_MINUTES = 1; // Durée de blocage en minutes
     private final ConcurrentMap<String, BlockData> attemptsCache;
 
     public LoginAttemptService() {

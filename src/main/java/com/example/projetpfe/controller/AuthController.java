@@ -2,8 +2,10 @@ package com.example.projetpfe.controller;
 
 import com.example.projetpfe.dto.UserDto;
 import com.example.projetpfe.entity.User;
+import com.example.projetpfe.security.LoginAttemptService; // Ajout de l'import manquant
 import com.example.projetpfe.service.UserService;
 import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired; // Ajout de l'import manquant
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Controller;
@@ -13,16 +15,24 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import jakarta.servlet.http.HttpServletRequest;
 
 import java.security.Principal;
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Controller
 public class AuthController {
 
+    private static final Logger logger = LoggerFactory.getLogger(AuthController.class);
+
     private UserService userService;
+
+    @Autowired // Ajout de l'injection manquante
+    private LoginAttemptService loginAttemptService;
 
     public AuthController(UserService userService) {
         this.userService = userService;
@@ -32,11 +42,6 @@ public class AuthController {
     public String home(){
         return "index";
     }
-
-    //@GetMapping("/login")
-    //public String loginForm() {
-      //  return "login";
-    //}
 
     // handler method to handle user registration request
     @GetMapping("register")
@@ -69,6 +74,7 @@ public class AuthController {
         model.addAttribute("users", users);
         return "users";
     }
+
     @GetMapping("/login-success")
     public String loginPageRedirect(Authentication authentication) {
         Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
@@ -82,18 +88,35 @@ public class AuthController {
             return "redirect:/index";
         }
     }
+
     @GetMapping("/login")
-    public String loginForm(Model model,
-                            @RequestParam(required = false) boolean blocked,
-                            @RequestParam(required = false) Long remaining) {
-        if (blocked) {
-            model.addAttribute("isBlocked", true);
-            if (remaining != null) {
-                model.addAttribute("remainingMinutes", remaining);
-            }
+    public String loginForm(Model model, HttpServletRequest request, Authentication authentication) {
+        // Si déjà authentifié, rediriger
+        if (authentication != null && authentication.isAuthenticated()) {
+            return "redirect:/index";
         }
+
+        String ip = getClientIP(request);
+
+        logger.debug("Accès à la page de login - Query string: {}", request.getQueryString());
+        logger.debug("Vérification du blocage pour l'IP: {}", ip);
+
+        if (loginAttemptService.isBlocked(ip)) {
+            long remainingMinutes = loginAttemptService.getRemainingBlockTimeInMinutes(ip);
+            logger.debug("IP bloquée, temps restant: {} minutes", remainingMinutes);
+
+            model.addAttribute("isBlocked", true);
+            model.addAttribute("remainingMinutes", remainingMinutes);
+        } else {
+            logger.debug("IP non bloquée");
+            model.addAttribute("isBlocked", false);
+        }
+
         return "login";
     }
 
-
+    private String getClientIP(HttpServletRequest request) {
+        String xfHeader = request.getHeader("X-Forwarded-For");
+        return xfHeader != null ? xfHeader.split(",")[0] : request.getRemoteAddr();
+    }
 }

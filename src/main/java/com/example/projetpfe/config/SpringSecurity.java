@@ -1,5 +1,6 @@
 package com.example.projetpfe.config;
 
+import com.example.projetpfe.security.CustomAuthenticationFailureHandler;
 import com.example.projetpfe.security.LoginAttemptService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -29,6 +30,8 @@ public class SpringSecurity {
 
     @Autowired
     private UserDetailsService userDetailsService;
+    @Autowired
+    private CustomAuthenticationFailureHandler customAuthenticationFailureHandler;
 
     @Bean
     public static PasswordEncoder passwordEncoder(){
@@ -46,9 +49,9 @@ public class SpringSecurity {
                                 .requestMatchers("/users-home").permitAll()
                 ).sessionManagement(session -> session
                         .sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED)
-                        .invalidSessionUrl("/login?expired")
+                        .invalidSessionUrl("/login")
                         .maximumSessions(1)
-                        .maxSessionsPreventsLogin(true)
+                        .maxSessionsPreventsLogin(false)
                         .expiredUrl("/login?expired")
                 )
                 .formLogin(
@@ -56,11 +59,15 @@ public class SpringSecurity {
                                 .loginPage("/login")
                                 .loginProcessingUrl("/login")
                                 .defaultSuccessUrl("/login-success", true)
-                                .failureHandler(authenticationFailureHandler())
+                                .failureHandler(customAuthenticationFailureHandler)
                                 .permitAll()
                 ).logout(
                         logout -> logout
                                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+                                .logoutSuccessUrl("/login?logout")  // Ajoutez cette ligne
+                                .deleteCookies("JSESSIONID")        // Ajoutez cette ligne
+                                .clearAuthentication(true)          // Ajoutez cette ligne
+                                .invalidateHttpSession(true)        // Ajoutez cette ligne
                                 .permitAll()
                 );
         return http.build();
@@ -75,36 +82,6 @@ public class SpringSecurity {
     @Bean
     public SpringSecurityDialect securityDialect() {
         return new SpringSecurityDialect();
-    }
-    @Bean
-    public AuthenticationFailureHandler authenticationFailureHandler() {
-        return new SimpleUrlAuthenticationFailureHandler() {
-            @Autowired
-            private LoginAttemptService loginAttemptService;
-
-            @Override
-            public void onAuthenticationFailure(HttpServletRequest request,
-                                                HttpServletResponse response,
-                                                AuthenticationException exception) throws IOException, ServletException {
-                Throwable cause = exception.getCause();
-                if (cause instanceof RuntimeException &&
-                        cause.getMessage().contains("bloquée")) {
-                    String ip = getClientIP(request);
-                    long remainingMinutes = loginAttemptService.getRemainingBlockTimeInMinutes(ip);
-
-                    // Redirection avec le temps restant
-                    getRedirectStrategy().sendRedirect(request, response,
-                            "/login?blocked=true&remaining=" + remainingMinutes);
-                } else {
-                    getRedirectStrategy().sendRedirect(request, response, "/login?error");
-                }
-            }
-
-            private String getClientIP(HttpServletRequest request) {
-                String xfHeader = request.getHeader("X-Forwarded-For");
-                return xfHeader != null ? xfHeader.split(",")[0] : request.getRemoteAddr();
-            }
-        };
     }
 
 

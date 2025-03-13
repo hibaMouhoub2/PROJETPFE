@@ -23,20 +23,35 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6 offset-md-3">
-            <div th:if="${param.error}">
-                <div class="alert alert-danger">Invalid Email and Password.</div>
+            <!-- Message d'erreur de login -->
+            <div th:if="${param.error}" class="alert alert-danger">
+                Identifiants invalides. Veuillez réessayer.
             </div>
-            <div th:if="${param.logout}">
-                <div class="alert alert-success">You have been logged out.</div>
+
+            <!-- Message de session expirée-->
+            <div th:if="${param.expired}" class="alert alert-warning">
+                Votre session a expiré. Veuillez vous reconnecter.
             </div>
+
+            <!-- Message de déconnexion-->
+            <div th:if="${param.logout}" class="alert alert-success">
+                Vous avez été déconnecté avec succès.
+            </div>
+
+            <!-- Message de blocage IP  -->
             <div th:if="${isBlocked}" class="alert alert-danger">
-                Votre compte a été temporairement bloqué en raison de trop nombreuses tentatives de connexion échouées. Veuillez réessayer plus tard.
+                Votre compte a été temporairement bloqué en raison de trop nombreuses tentatives de connexion échouées.
                 <span th:if="${remainingMinutes != null}">
                     Veuillez réessayer dans <span th:text="${remainingMinutes}"></span> minutes.
                 </span>
                 <span th:unless="${remainingMinutes != null}">
                     Veuillez réessayer plus tard.
                 </span>
+            </div>
+            <!-- Débogage -->
+            <div>
+                <p>Debug - isBlocked: <span th:text="${isBlocked}"></span></p>
+                <p>Debug - remainingMinutes: <span th:text="${remainingMinutes}"></span></p>
             </div>
             <div class="card">
                 <div class="card-header">
@@ -76,6 +91,7 @@
                         </span> -->
                         </div>
                     </form>
+
                 </div>
             </div>
         </div>

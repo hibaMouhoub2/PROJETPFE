@@ -5,6 +5,7 @@ import com.example.projetpfe.entity.User;
 import com.example.projetpfe.repository.UserRepository;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.LockedException;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -14,10 +15,15 @@ import org.springframework.stereotype.Service;
 
 import java.util.Collection;
 import java.util.stream.Collectors;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+
+
 
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
-
+    private static final Logger logger = LoggerFactory.getLogger(CustomUserDetailsService.class);
     private UserRepository userRepository;
     @Autowired
     private LoginAttemptService loginAttemptService;
@@ -36,15 +42,18 @@ public class CustomUserDetailsService implements UserDetailsService {
 
         // Vérifier si l'IP est bloquée
         if (loginAttemptService.isBlocked(ip)) {
-            throw new RuntimeException("IP bloquée pour trop de tentatives échouées");
+            logger.warn("Tentative d'authentification depuis une IP bloquée: {}", ip);
+            throw new LockedException("IP bloquée pour trop de tentatives échouées");
         }
+
         User user = userRepository.findByEmail(email);
 
         if (user != null) {
             return new org.springframework.security.core.userdetails.User(user.getEmail(),
                     user.getPassword(),
                     mapRolesToAuthorities(user.getRoles()));
-        }else{
+        } else {
+            logger.debug("Utilisateur non trouvé avec l'email: {}", email);
             throw new UsernameNotFoundException("Invalid username or password.");
         }
     }
