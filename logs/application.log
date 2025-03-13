@@ -1719,7 +1719,7 @@ Caused by: org.springframework.security.authentication.LockedException: IP bloqu
 2025-03-13 10:31:30 [http-nio-8080-exec-2] DEBUG c.e.p.controller.AuthController - Accès à la page de login - Query string: null
 2025-03-13 10:31:30 [http-nio-8080-exec-2] DEBUG c.e.p.controller.AuthController - Vérification du blocage pour l'IP: 0:0:0:0:0:0:0:1
 2025-03-13 10:31:30 [http-nio-8080-exec-2] DEBUG c.e.p.controller.AuthController - IP non bloquée
-2025-03-13 10:31:30 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /favicon.ico
+2025-03-13 10:31:30 [http-nio-80 80-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /favicon.ico
 2025-03-13 10:31:30 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
 2025-03-13 10:31:30 [http-nio-8080-exec-1] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to http://localhost:8080/login
 2025-03-13 10:31:30 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login
@@ -1928,3 +1928,897 @@ Caused by: org.springframework.security.authentication.LockedException: IP bloqu
 2025-03-13 10:41:34 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 2025-03-13 10:41:34 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 2025-03-13 10:41:34 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-03-13 10:57:24 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+2025-03-13 10:57:24 [main] INFO  c.e.projetpfe.ProjetPfeApplication - Starting ProjetPfeApplication using Java 17.0.12 with PID 12444 (C:\Users\hiba3\IdeaProjects\ProjetPFE\target\classes started by hiba3 in C:\Users\hiba3\IdeaProjects\ProjetPFE)
+2025-03-13 10:57:24 [main] INFO  c.e.projetpfe.ProjetPfeApplication - No active profile set, falling back to 1 default profile: "default"
+2025-03-13 10:57:25 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-13 10:57:25 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 60 ms. Found 2 JPA repository interfaces.
+2025-03-13 10:57:25 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-03-13 10:57:25 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-03-13 10:57:25 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-03-13 10:57:25 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.1]
+2025-03-13 10:57:25 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-03-13 10:57:25 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1338 ms
+2025-03-13 10:57:26 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-13 10:57:26 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.5.Final
+2025-03-13 10:57:26 [main] WARN  org.hibernate.orm.deprecation - HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+2025-03-13 10:57:26 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-03-13 10:57:26 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7bc2ae16
+2025-03-13 10:57:26 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-03-13 10:57:26 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2025-03-13 10:57:27 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-03-13 10:57:27 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-13 10:57:27 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-13 10:57:27 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+2025-03-13 10:57:28 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@71689ee2, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@f2b4303, org.springframework.security.web.context.SecurityContextHolderFilter@52667676, org.springframework.security.web.header.HeaderWriterFilter@10f60e36, org.springframework.security.web.csrf.CsrfFilter@7575f7e1, org.springframework.security.web.authentication.logout.LogoutFilter@50d91a0f, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3a5ffea, org.springframework.security.web.session.ConcurrentSessionFilter@5ace6611, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@39a09c0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6802c10e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@23dda7a3, org.springframework.security.web.session.SessionManagementFilter@7e84af34, org.springframework.security.web.access.ExceptionTranslationFilter@7010c9e4, org.springframework.security.web.access.intercept.AuthorizationFilter@1d4c6e32]
+2025-03-13 10:57:28 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-03-13 10:57:28 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-03-13 10:57:28 [main] INFO  c.e.projetpfe.ProjetPfeApplication - Started ProjetPfeApplication in 4.281 seconds (process running for 5.141)
+2025-03-13 10:57:39 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-13 10:57:39 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-03-13 10:57:39 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-03-13 10:57:39 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login
+2025-03-13 10:57:39 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-13 10:57:39 [http-nio-8080-exec-1] DEBUG o.s.s.w.s.SessionManagementFilter - Request requested invalid session id E997EFD1D03BB8F10A081397CB8A0E2D
+2025-03-13 10:57:39 [http-nio-8080-exec-1] DEBUG o.s.s.w.s.SimpleRedirectInvalidSessionStrategy - Starting new session (if required) and redirecting to '/login'
+2025-03-13 10:57:39 [http-nio-8080-exec-1] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to /login
+2025-03-13 10:57:39 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login
+2025-03-13 10:57:39 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-13 10:57:39 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /login
+2025-03-13 10:57:39 [http-nio-8080-exec-2] DEBUG c.e.p.controller.AuthController - Accès à la page de login - Query string: null
+2025-03-13 10:57:39 [http-nio-8080-exec-2] DEBUG c.e.p.controller.AuthController - Vérification du blocage pour l'IP: 0:0:0:0:0:0:0:1
+2025-03-13 10:57:39 [http-nio-8080-exec-2] DEBUG c.e.p.controller.AuthController - IP non bloquée
+2025-03-13 10:57:42 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /index
+2025-03-13 10:57:42 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-13 10:57:42 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /index
+2025-03-13 10:57:43 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /favicon.ico
+2025-03-13 10:57:43 [http-nio-8080-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-13 10:57:43 [http-nio-8080-exec-4] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to http://localhost:8080/login
+2025-03-13 10:57:43 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login
+2025-03-13 10:57:43 [http-nio-8080-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-13 10:57:43 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /login
+2025-03-13 10:57:43 [http-nio-8080-exec-5] DEBUG c.e.p.controller.AuthController - Accès à la page de login - Query string: null
+2025-03-13 10:57:43 [http-nio-8080-exec-5] DEBUG c.e.p.controller.AuthController - Vérification du blocage pour l'IP: 0:0:0:0:0:0:0:1
+2025-03-13 10:57:43 [http-nio-8080-exec-5] DEBUG c.e.p.controller.AuthController - IP non bloquée
+2025-03-13 10:58:07 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login
+2025-03-13 10:58:07 [http-nio-8080-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-13 10:58:07 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /login
+2025-03-13 10:58:07 [http-nio-8080-exec-6] DEBUG c.e.p.controller.AuthController - Accès à la page de login - Query string: null
+2025-03-13 10:58:07 [http-nio-8080-exec-6] DEBUG c.e.p.controller.AuthController - Vérification du blocage pour l'IP: 0:0:0:0:0:0:0:1
+2025-03-13 10:58:07 [http-nio-8080-exec-6] DEBUG c.e.p.controller.AuthController - IP non bloquée
+2025-03-13 10:58:07 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /favicon.ico
+2025-03-13 10:58:07 [http-nio-8080-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-13 10:58:07 [http-nio-8080-exec-7] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to http://localhost:8080/login
+2025-03-13 10:58:07 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login
+2025-03-13 10:58:07 [http-nio-8080-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-13 10:58:07 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /login
+2025-03-13 10:58:07 [http-nio-8080-exec-8] DEBUG c.e.p.controller.AuthController - Accès à la page de login - Query string: null
+2025-03-13 10:58:07 [http-nio-8080-exec-8] DEBUG c.e.p.controller.AuthController - Vérification du blocage pour l'IP: 0:0:0:0:0:0:0:1
+2025-03-13 10:58:07 [http-nio-8080-exec-8] DEBUG c.e.p.controller.AuthController - IP non bloquée
+2025-03-13 10:58:09 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /index
+2025-03-13 10:58:09 [http-nio-8080-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-13 10:58:09 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /index
+2025-03-13 10:58:09 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /favicon.ico
+2025-03-13 10:58:09 [http-nio-8080-exec-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-13 10:58:09 [http-nio-8080-exec-10] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to http://localhost:8080/login
+2025-03-13 10:58:09 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login
+2025-03-13 10:58:09 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-13 10:58:09 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /login
+2025-03-13 10:58:09 [http-nio-8080-exec-1] DEBUG c.e.p.controller.AuthController - Accès à la page de login - Query string: null
+2025-03-13 10:58:09 [http-nio-8080-exec-1] DEBUG c.e.p.controller.AuthController - Vérification du blocage pour l'IP: 0:0:0:0:0:0:0:1
+2025-03-13 10:58:09 [http-nio-8080-exec-1] DEBUG c.e.p.controller.AuthController - IP non bloquée
+2025-03-13 11:02:58 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-13 11:02:58 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-03-13 11:02:58 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-03-13 11:07:15 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+2025-03-13 11:07:15 [main] INFO  c.e.projetpfe.ProjetPfeApplication - Starting ProjetPfeApplication using Java 17.0.12 with PID 18084 (C:\Users\hiba3\IdeaProjects\ProjetPFE\target\classes started by hiba3 in C:\Users\hiba3\IdeaProjects\ProjetPFE)
+2025-03-13 11:07:15 [main] INFO  c.e.projetpfe.ProjetPfeApplication - No active profile set, falling back to 1 default profile: "default"
+2025-03-13 11:07:16 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-13 11:07:16 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 57 ms. Found 2 JPA repository interfaces.
+2025-03-13 11:07:16 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-03-13 11:07:16 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-03-13 11:07:16 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-03-13 11:07:16 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.1]
+2025-03-13 11:07:16 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-03-13 11:07:16 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1328 ms
+2025-03-13 11:07:16 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-13 11:07:16 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.5.Final
+2025-03-13 11:07:17 [main] WARN  org.hibernate.orm.deprecation - HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+2025-03-13 11:07:17 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-03-13 11:07:17 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2b458cd6
+2025-03-13 11:07:17 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-03-13 11:07:17 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2025-03-13 11:07:18 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-03-13 11:07:18 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-13 11:07:18 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-13 11:07:18 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+2025-03-13 11:07:19 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7e84af34, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@218e186b, org.springframework.security.web.context.SecurityContextHolderFilter@b859355, org.springframework.security.web.header.HeaderWriterFilter@57fae911, org.springframework.security.web.csrf.CsrfFilter@1aebe759, org.springframework.security.web.authentication.logout.LogoutFilter@6406b84d, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@10f60e36, org.springframework.security.web.session.ConcurrentSessionFilter@116efe65, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7c3223aa, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4fc8163, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@12925d2, org.springframework.security.web.session.SessionManagementFilter@28941a68, org.springframework.security.web.access.ExceptionTranslationFilter@8de4206, org.springframework.security.web.access.intercept.AuthorizationFilter@28befd62]
+2025-03-13 11:07:19 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-03-13 11:07:19 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-03-13 11:07:19 [main] INFO  c.e.projetpfe.ProjetPfeApplication - Started ProjetPfeApplication in 4.26 seconds (process running for 5.087)
+2025-03-13 11:07:19 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-13 11:07:19 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-03-13 11:07:19 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-03-13 11:07:19 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login
+2025-03-13 11:07:19 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-13 11:07:19 [http-nio-8080-exec-1] DEBUG o.s.s.w.s.SessionManagementFilter - Request requested invalid session id A1A057D07BDB7047C9D93F603CCA03C0
+2025-03-13 11:07:19 [http-nio-8080-exec-1] DEBUG o.s.s.w.s.SimpleRedirectInvalidSessionStrategy - Starting new session (if required) and redirecting to '/login'
+2025-03-13 11:07:19 [http-nio-8080-exec-1] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to /login
+2025-03-13 11:07:19 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login
+2025-03-13 11:07:19 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-13 11:07:19 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /login
+2025-03-13 11:07:19 [http-nio-8080-exec-2] DEBUG c.e.p.controller.AuthController - Accès à la page de login - Query string: null
+2025-03-13 11:07:19 [http-nio-8080-exec-2] DEBUG c.e.p.controller.AuthController - Vérification du blocage pour l'IP: 0:0:0:0:0:0:0:1
+2025-03-13 11:07:19 [http-nio-8080-exec-2] DEBUG c.e.p.controller.AuthController - IP non bloquée
+2025-03-13 11:07:19 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /favicon.ico
+2025-03-13 11:07:19 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-13 11:07:19 [http-nio-8080-exec-3] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to http://localhost:8080/login
+2025-03-13 11:07:19 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login
+2025-03-13 11:07:19 [http-nio-8080-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-13 11:07:19 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /login
+2025-03-13 11:07:19 [http-nio-8080-exec-4] DEBUG c.e.p.controller.AuthController - Accès à la page de login - Query string: null
+2025-03-13 11:07:19 [http-nio-8080-exec-4] DEBUG c.e.p.controller.AuthController - Vérification du blocage pour l'IP: 0:0:0:0:0:0:0:1
+2025-03-13 11:07:19 [http-nio-8080-exec-4] DEBUG c.e.p.controller.AuthController - IP non bloquée
+2025-03-13 11:07:25 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /index
+2025-03-13 11:07:25 [http-nio-8080-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-13 11:07:25 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /index
+2025-03-13 11:07:25 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /favicon.ico
+2025-03-13 11:07:25 [http-nio-8080-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-13 11:07:25 [http-nio-8080-exec-8] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to http://localhost:8080/login
+2025-03-13 11:07:25 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login
+2025-03-13 11:07:25 [http-nio-8080-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-13 11:07:25 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /login
+2025-03-13 11:07:25 [http-nio-8080-exec-7] DEBUG c.e.p.controller.AuthController - Accès à la page de login - Query string: null
+2025-03-13 11:07:25 [http-nio-8080-exec-7] DEBUG c.e.p.controller.AuthController - Vérification du blocage pour l'IP: 0:0:0:0:0:0:0:1
+2025-03-13 11:07:25 [http-nio-8080-exec-7] DEBUG c.e.p.controller.AuthController - IP non bloquée
+2025-03-13 11:07:28 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login
+2025-03-13 11:07:28 [http-nio-8080-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-13 11:07:28 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /login
+2025-03-13 11:07:28 [http-nio-8080-exec-9] DEBUG c.e.p.controller.AuthController - Accès à la page de login - Query string: null
+2025-03-13 11:07:28 [http-nio-8080-exec-9] DEBUG c.e.p.controller.AuthController - Vérification du blocage pour l'IP: 0:0:0:0:0:0:0:1
+2025-03-13 11:07:28 [http-nio-8080-exec-9] DEBUG c.e.p.controller.AuthController - IP non bloquée
+2025-03-13 11:07:28 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /favicon.ico
+2025-03-13 11:07:28 [http-nio-8080-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-13 11:07:28 [http-nio-8080-exec-6] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to http://localhost:8080/login
+2025-03-13 11:07:28 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login
+2025-03-13 11:07:28 [http-nio-8080-exec-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-13 11:07:28 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /login
+2025-03-13 11:07:28 [http-nio-8080-exec-10] DEBUG c.e.p.controller.AuthController - Accès à la page de login - Query string: null
+2025-03-13 11:07:28 [http-nio-8080-exec-10] DEBUG c.e.p.controller.AuthController - Vérification du blocage pour l'IP: 0:0:0:0:0:0:0:1
+2025-03-13 11:07:28 [http-nio-8080-exec-10] DEBUG c.e.p.controller.AuthController - IP non bloquée
+2025-03-13 11:07:36 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing POST /login
+2025-03-13 11:07:36 [http-nio-8080-exec-1] DEBUG o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
+2025-03-13 11:07:36 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.s.ChangeSessionIdAuthenticationStrategy - Changed session id from B180AB0B1B5FAC9D1D6E27E0D063E115
+2025-03-13 11:07:36 [http-nio-8080-exec-1] DEBUG o.s.s.c.session.SessionRegistryImpl - Registering session 1612E0D2572EDDE5DFE8FEB1C0D04DE3, for principal org.springframework.security.core.userdetails.User [Username=hiba@gmail.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]]
+2025-03-13 11:07:36 [http-nio-8080-exec-1] DEBUG o.s.s.w.c.CsrfAuthenticationStrategy - Replaced CSRF Token
+2025-03-13 11:07:36 [http-nio-8080-exec-1] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Stored SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=hiba@gmail.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=B180AB0B1B5FAC9D1D6E27E0D063E115], Granted Authorities=[ROLE_USER]]] to HttpSession [org.apache.catalina.session.StandardSessionFacade@1aeac0d6]
+2025-03-13 11:07:36 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.UsernamePasswordAuthenticationFilter - Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=hiba@gmail.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=B180AB0B1B5FAC9D1D6E27E0D063E115], Granted Authorities=[ROLE_USER]]
+2025-03-13 11:07:36 [http-nio-8080-exec-1] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to /login-success
+2025-03-13 11:07:36 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login-success
+2025-03-13 11:07:36 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /login-success
+2025-03-13 11:07:36 [http-nio-8080-exec-2] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=hiba@gmail.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=B180AB0B1B5FAC9D1D6E27E0D063E115], Granted Authorities=[ROLE_USER]]]
+2025-03-13 11:07:36 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /index
+2025-03-13 11:07:36 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /index
+2025-03-13 11:07:36 [http-nio-8080-exec-3] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=hiba@gmail.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=B180AB0B1B5FAC9D1D6E27E0D063E115], Granted Authorities=[ROLE_USER]]]
+2025-03-13 11:07:36 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /favicon.ico
+2025-03-13 11:07:36 [http-nio-8080-exec-4] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=hiba@gmail.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=B180AB0B1B5FAC9D1D6E27E0D063E115], Granted Authorities=[ROLE_USER]]]
+2025-03-13 11:07:36 [http-nio-8080-exec-4] DEBUG o.s.s.w.a.AccessDeniedHandlerImpl - Responding with 403 status code
+2025-03-13 11:07:36 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+2025-03-13 11:07:36 [http-nio-8080-exec-4] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=hiba@gmail.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=B180AB0B1B5FAC9D1D6E27E0D063E115], Granted Authorities=[ROLE_USER]]]
+2025-03-13 11:07:36 [http-nio-8080-exec-4] DEBUG o.s.s.w.a.AccessDeniedHandlerImpl - Responding with 403 status code
+2025-03-13 11:07:40 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /logout
+2025-03-13 11:07:40 [http-nio-8080-exec-5] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=hiba@gmail.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=B180AB0B1B5FAC9D1D6E27E0D063E115], Granted Authorities=[ROLE_USER]]]
+2025-03-13 11:07:40 [http-nio-8080-exec-5] DEBUG o.s.s.w.a.logout.LogoutFilter - Logging out [UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=hiba@gmail.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=B180AB0B1B5FAC9D1D6E27E0D063E115], Granted Authorities=[ROLE_USER]]]
+2025-03-13 11:07:40 [http-nio-8080-exec-5] DEBUG o.s.s.w.a.l.SecurityContextLogoutHandler - Invalidated session 1612E0D2572EDDE5DFE8FEB1C0D04DE3
+2025-03-13 11:07:40 [http-nio-8080-exec-5] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to /login?logout
+2025-03-13 11:07:40 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login?logout
+2025-03-13 11:07:40 [http-nio-8080-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-13 11:07:40 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /login?logout
+2025-03-13 11:07:40 [http-nio-8080-exec-8] DEBUG c.e.p.controller.AuthController - Accès à la page de login - Query string: logout
+2025-03-13 11:07:40 [http-nio-8080-exec-8] DEBUG c.e.p.controller.AuthController - Vérification du blocage pour l'IP: 0:0:0:0:0:0:0:1
+2025-03-13 11:07:40 [http-nio-8080-exec-8] DEBUG c.e.p.controller.AuthController - IP non bloquée
+2025-03-13 11:07:40 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /favicon.ico
+2025-03-13 11:07:40 [http-nio-8080-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-13 11:07:40 [http-nio-8080-exec-7] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to http://localhost:8080/login
+2025-03-13 11:07:40 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login
+2025-03-13 11:07:40 [http-nio-8080-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-13 11:07:40 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /login
+2025-03-13 11:07:40 [http-nio-8080-exec-9] DEBUG c.e.p.controller.AuthController - Accès à la page de login - Query string: null
+2025-03-13 11:07:40 [http-nio-8080-exec-9] DEBUG c.e.p.controller.AuthController - Vérification du blocage pour l'IP: 0:0:0:0:0:0:0:1
+2025-03-13 11:07:40 [http-nio-8080-exec-9] DEBUG c.e.p.controller.AuthController - IP non bloquée
+2025-03-13 11:07:49 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing POST /login
+2025-03-13 11:07:49 [http-nio-8080-exec-6] DEBUG o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
+2025-03-13 11:07:49 [http-nio-8080-exec-6] DEBUG o.s.s.w.a.s.ChangeSessionIdAuthenticationStrategy - Changed session id from 9B69ABFC1290F31A86F73F2B02157791
+2025-03-13 11:07:49 [http-nio-8080-exec-6] DEBUG o.s.s.c.session.SessionRegistryImpl - Registering session DCFEB0EC397A16BB3A0A4F43452340F9, for principal org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]]
+2025-03-13 11:07:49 [http-nio-8080-exec-6] DEBUG o.s.s.w.c.CsrfAuthenticationStrategy - Replaced CSRF Token
+2025-03-13 11:07:49 [http-nio-8080-exec-6] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Stored SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9B69ABFC1290F31A86F73F2B02157791], Granted Authorities=[ROLE_ADMIN]]] to HttpSession [org.apache.catalina.session.StandardSessionFacade@73b3df5d]
+2025-03-13 11:07:49 [http-nio-8080-exec-6] DEBUG o.s.s.w.a.UsernamePasswordAuthenticationFilter - Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9B69ABFC1290F31A86F73F2B02157791], Granted Authorities=[ROLE_ADMIN]]
+2025-03-13 11:07:49 [http-nio-8080-exec-6] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to /login-success
+2025-03-13 11:07:50 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login-success
+2025-03-13 11:07:50 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /login-success
+2025-03-13 11:07:50 [http-nio-8080-exec-10] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9B69ABFC1290F31A86F73F2B02157791], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 11:07:50 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /users
+2025-03-13 11:07:50 [http-nio-8080-exec-1] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9B69ABFC1290F31A86F73F2B02157791], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 11:07:50 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /users
+2025-03-13 11:07:50 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /favicon.ico
+2025-03-13 11:07:50 [http-nio-8080-exec-2] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9B69ABFC1290F31A86F73F2B02157791], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 11:07:50 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.AccessDeniedHandlerImpl - Responding with 403 status code
+2025-03-13 11:07:50 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+2025-03-13 11:07:50 [http-nio-8080-exec-2] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9B69ABFC1290F31A86F73F2B02157791], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 11:07:50 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.AccessDeniedHandlerImpl - Responding with 403 status code
+2025-03-13 11:07:54 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /register
+2025-03-13 11:07:54 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /register
+2025-03-13 11:07:54 [http-nio-8080-exec-3] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9B69ABFC1290F31A86F73F2B02157791], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 11:07:54 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /favicon.ico
+2025-03-13 11:07:54 [http-nio-8080-exec-4] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9B69ABFC1290F31A86F73F2B02157791], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 11:07:54 [http-nio-8080-exec-4] DEBUG o.s.s.w.a.AccessDeniedHandlerImpl - Responding with 403 status code
+2025-03-13 11:07:54 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+2025-03-13 11:07:54 [http-nio-8080-exec-4] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9B69ABFC1290F31A86F73F2B02157791], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 11:07:54 [http-nio-8080-exec-4] DEBUG o.s.s.w.a.AccessDeniedHandlerImpl - Responding with 403 status code
+2025-03-13 11:09:45 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login
+2025-03-13 11:09:45 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /login
+2025-03-13 11:09:45 [http-nio-8080-exec-7] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9B69ABFC1290F31A86F73F2B02157791], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 11:09:45 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /index
+2025-03-13 11:09:45 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /index
+2025-03-13 11:09:45 [http-nio-8080-exec-9] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9B69ABFC1290F31A86F73F2B02157791], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 11:09:45 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /favicon.ico
+2025-03-13 11:09:45 [http-nio-8080-exec-6] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9B69ABFC1290F31A86F73F2B02157791], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 11:09:45 [http-nio-8080-exec-6] DEBUG o.s.s.w.a.AccessDeniedHandlerImpl - Responding with 403 status code
+2025-03-13 11:09:45 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+2025-03-13 11:09:45 [http-nio-8080-exec-6] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9B69ABFC1290F31A86F73F2B02157791], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 11:09:45 [http-nio-8080-exec-6] DEBUG o.s.s.w.a.AccessDeniedHandlerImpl - Responding with 403 status code
+2025-03-13 11:09:48 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /logout
+2025-03-13 11:09:48 [http-nio-8080-exec-10] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9B69ABFC1290F31A86F73F2B02157791], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 11:09:48 [http-nio-8080-exec-10] DEBUG o.s.s.w.a.logout.LogoutFilter - Logging out [UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9B69ABFC1290F31A86F73F2B02157791], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 11:09:48 [http-nio-8080-exec-10] DEBUG o.s.s.w.a.l.SecurityContextLogoutHandler - Invalidated session DCFEB0EC397A16BB3A0A4F43452340F9
+2025-03-13 11:09:48 [http-nio-8080-exec-10] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to /login?logout
+2025-03-13 11:09:48 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login?logout
+2025-03-13 11:09:48 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-13 11:09:48 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /login?logout
+2025-03-13 11:09:48 [http-nio-8080-exec-1] DEBUG c.e.p.controller.AuthController - Accès à la page de login - Query string: logout
+2025-03-13 11:09:48 [http-nio-8080-exec-1] DEBUG c.e.p.controller.AuthController - Vérification du blocage pour l'IP: 0:0:0:0:0:0:0:1
+2025-03-13 11:09:48 [http-nio-8080-exec-1] DEBUG c.e.p.controller.AuthController - IP non bloquée
+2025-03-13 11:09:48 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /favicon.ico
+2025-03-13 11:09:48 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-13 11:09:48 [http-nio-8080-exec-2] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to http://localhost:8080/login
+2025-03-13 11:09:48 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login
+2025-03-13 11:09:48 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-13 11:09:48 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /login
+2025-03-13 11:09:48 [http-nio-8080-exec-3] DEBUG c.e.p.controller.AuthController - Accès à la page de login - Query string: null
+2025-03-13 11:09:48 [http-nio-8080-exec-3] DEBUG c.e.p.controller.AuthController - Vérification du blocage pour l'IP: 0:0:0:0:0:0:0:1
+2025-03-13 11:09:48 [http-nio-8080-exec-3] DEBUG c.e.p.controller.AuthController - IP non bloquée
+2025-03-13 11:09:57 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing POST /login
+2025-03-13 11:09:57 [http-nio-8080-exec-4] DEBUG o.s.s.a.d.DaoAuthenticationProvider - Failed to authenticate since password does not match stored value
+2025-03-13 11:09:57 [http-nio-8080-exec-4] DEBUG c.e.p.s.CustomAuthenticationFailureHandler - Authentication failure for IP: 0:0:0:0:0:0:0:1
+2025-03-13 11:09:57 [http-nio-8080-exec-4] DEBUG c.e.p.s.CustomAuthenticationFailureHandler - Échec d'authentification standard pour l'IP 0:0:0:0:0:0:0:1, redirection vers /login?error
+2025-03-13 11:09:57 [http-nio-8080-exec-4] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to /login?error
+2025-03-13 11:09:57 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login?error
+2025-03-13 11:09:57 [http-nio-8080-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-13 11:09:57 [http-nio-8080-exec-5] DEBUG o.s.s.w.s.HttpSessionRequestCache - Saved request http://localhost:8080/login?error&continue to session
+2025-03-13 11:09:57 [http-nio-8080-exec-5] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to http://localhost:8080/login
+2025-03-13 11:09:57 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login
+2025-03-13 11:09:57 [http-nio-8080-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-13 11:09:57 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /login
+2025-03-13 11:09:57 [http-nio-8080-exec-8] DEBUG c.e.p.controller.AuthController - Accès à la page de login - Query string: null
+2025-03-13 11:09:57 [http-nio-8080-exec-8] DEBUG c.e.p.controller.AuthController - Vérification du blocage pour l'IP: 0:0:0:0:0:0:0:1
+2025-03-13 11:09:57 [http-nio-8080-exec-8] DEBUG c.e.p.controller.AuthController - IP non bloquée
+2025-03-13 11:09:57 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /favicon.ico
+2025-03-13 11:09:57 [http-nio-8080-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-13 11:09:57 [http-nio-8080-exec-7] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to http://localhost:8080/login
+2025-03-13 11:09:57 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login
+2025-03-13 11:09:57 [http-nio-8080-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-13 11:09:57 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /login
+2025-03-13 11:09:57 [http-nio-8080-exec-9] DEBUG c.e.p.controller.AuthController - Accès à la page de login - Query string: null
+2025-03-13 11:09:57 [http-nio-8080-exec-9] DEBUG c.e.p.controller.AuthController - Vérification du blocage pour l'IP: 0:0:0:0:0:0:0:1
+2025-03-13 11:09:57 [http-nio-8080-exec-9] DEBUG c.e.p.controller.AuthController - IP non bloquée
+2025-03-13 11:10:05 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing POST /login
+2025-03-13 11:10:05 [http-nio-8080-exec-6] DEBUG o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
+2025-03-13 11:10:05 [http-nio-8080-exec-6] DEBUG o.s.s.w.a.s.ChangeSessionIdAuthenticationStrategy - Changed session id from 376FB01133C81CC4071BDCA1E809D317
+2025-03-13 11:10:05 [http-nio-8080-exec-6] DEBUG o.s.s.c.session.SessionRegistryImpl - Registering session DAE04C3FEBAE7E74FC9E5D684E37AE8A, for principal org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]]
+2025-03-13 11:10:05 [http-nio-8080-exec-6] DEBUG o.s.s.w.c.CsrfAuthenticationStrategy - Replaced CSRF Token
+2025-03-13 11:10:05 [http-nio-8080-exec-6] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Stored SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=376FB01133C81CC4071BDCA1E809D317], Granted Authorities=[ROLE_ADMIN]]] to HttpSession [org.apache.catalina.session.StandardSessionFacade@3daf9e2d]
+2025-03-13 11:10:05 [http-nio-8080-exec-6] DEBUG o.s.s.w.a.UsernamePasswordAuthenticationFilter - Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=376FB01133C81CC4071BDCA1E809D317], Granted Authorities=[ROLE_ADMIN]]
+2025-03-13 11:10:05 [http-nio-8080-exec-6] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to /login-success
+2025-03-13 11:10:05 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login-success
+2025-03-13 11:10:05 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /login-success
+2025-03-13 11:10:05 [http-nio-8080-exec-10] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=376FB01133C81CC4071BDCA1E809D317], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 11:10:05 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /users
+2025-03-13 11:10:05 [http-nio-8080-exec-1] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=376FB01133C81CC4071BDCA1E809D317], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 11:10:05 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /users
+2025-03-13 11:10:05 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /favicon.ico
+2025-03-13 11:10:05 [http-nio-8080-exec-2] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=376FB01133C81CC4071BDCA1E809D317], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 11:10:05 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.AccessDeniedHandlerImpl - Responding with 403 status code
+2025-03-13 11:10:05 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+2025-03-13 11:10:05 [http-nio-8080-exec-2] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=376FB01133C81CC4071BDCA1E809D317], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 11:10:05 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.AccessDeniedHandlerImpl - Responding with 403 status code
+2025-03-13 11:10:43 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /logout
+2025-03-13 11:10:43 [http-nio-8080-exec-3] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=376FB01133C81CC4071BDCA1E809D317], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 11:10:43 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.logout.LogoutFilter - Logging out [UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=376FB01133C81CC4071BDCA1E809D317], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 11:10:43 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.l.SecurityContextLogoutHandler - Invalidated session DAE04C3FEBAE7E74FC9E5D684E37AE8A
+2025-03-13 11:10:43 [http-nio-8080-exec-3] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to /login?logout
+2025-03-13 11:10:43 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login?logout
+2025-03-13 11:10:43 [http-nio-8080-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-13 11:10:43 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /login?logout
+2025-03-13 11:10:43 [http-nio-8080-exec-4] DEBUG c.e.p.controller.AuthController - Accès à la page de login - Query string: logout
+2025-03-13 11:10:43 [http-nio-8080-exec-4] DEBUG c.e.p.controller.AuthController - Vérification du blocage pour l'IP: 0:0:0:0:0:0:0:1
+2025-03-13 11:10:43 [http-nio-8080-exec-4] DEBUG c.e.p.controller.AuthController - IP non bloquée
+2025-03-13 11:10:43 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /favicon.ico
+2025-03-13 11:10:43 [http-nio-8080-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-13 11:10:43 [http-nio-8080-exec-5] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to http://localhost:8080/login
+2025-03-13 11:10:43 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login
+2025-03-13 11:10:43 [http-nio-8080-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-13 11:10:43 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /login
+2025-03-13 11:10:43 [http-nio-8080-exec-8] DEBUG c.e.p.controller.AuthController - Accès à la page de login - Query string: null
+2025-03-13 11:10:43 [http-nio-8080-exec-8] DEBUG c.e.p.controller.AuthController - Vérification du blocage pour l'IP: 0:0:0:0:0:0:0:1
+2025-03-13 11:10:43 [http-nio-8080-exec-8] DEBUG c.e.p.controller.AuthController - IP non bloquée
+2025-03-13 11:11:24 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-13 11:11:24 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-03-13 11:11:24 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-03-13 11:16:22 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+2025-03-13 11:16:22 [main] INFO  c.e.projetpfe.ProjetPfeApplication - Starting ProjetPfeApplication using Java 17.0.12 with PID 17044 (C:\Users\hiba3\IdeaProjects\ProjetPFE\target\classes started by hiba3 in C:\Users\hiba3\IdeaProjects\ProjetPFE)
+2025-03-13 11:16:22 [main] INFO  c.e.projetpfe.ProjetPfeApplication - No active profile set, falling back to 1 default profile: "default"
+2025-03-13 11:16:23 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-13 11:16:23 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 58 ms. Found 2 JPA repository interfaces.
+2025-03-13 11:16:24 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-03-13 11:16:24 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-03-13 11:16:24 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-03-13 11:16:24 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.1]
+2025-03-13 11:16:24 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-03-13 11:16:24 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1330 ms
+2025-03-13 11:16:24 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-13 11:16:24 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.5.Final
+2025-03-13 11:16:24 [main] WARN  org.hibernate.orm.deprecation - HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+2025-03-13 11:16:24 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-03-13 11:16:24 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@510da778
+2025-03-13 11:16:24 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-03-13 11:16:25 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2025-03-13 11:16:25 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-03-13 11:16:25 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-13 11:16:26 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-13 11:16:26 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+2025-03-13 11:16:26 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@50d91a0f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3ace65df, org.springframework.security.web.context.SecurityContextHolderFilter@3a83cfbc, org.springframework.security.web.header.HeaderWriterFilter@4fc84c92, org.springframework.security.web.csrf.CsrfFilter@1f24e33d, org.springframework.security.web.authentication.logout.LogoutFilter@44d6f9cf, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6771fc29, org.springframework.security.web.session.ConcurrentSessionFilter@28befd62, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@23d07ad3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7a689979, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@52b6561b, org.springframework.security.web.session.SessionManagementFilter@6406b84d, org.springframework.security.web.access.ExceptionTranslationFilter@15a5cc6e, org.springframework.security.web.access.intercept.AuthorizationFilter@167f9043]
+2025-03-13 11:16:26 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-03-13 11:16:26 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-03-13 11:16:26 [main] INFO  c.e.projetpfe.ProjetPfeApplication - Started ProjetPfeApplication in 4.396 seconds (process running for 5.285)
+2025-03-13 11:16:35 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-13 11:16:35 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-03-13 11:16:35 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-03-13 11:16:35 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login
+2025-03-13 11:16:35 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-13 11:16:35 [http-nio-8080-exec-1] DEBUG o.s.s.w.s.SessionManagementFilter - Request requested invalid session id 40ED4D76D947389924EC3F1105762D70
+2025-03-13 11:16:35 [http-nio-8080-exec-1] DEBUG o.s.s.w.s.SimpleRedirectInvalidSessionStrategy - Starting new session (if required) and redirecting to '/login'
+2025-03-13 11:16:35 [http-nio-8080-exec-1] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to /login
+2025-03-13 11:16:35 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login
+2025-03-13 11:16:35 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-13 11:16:35 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /login
+2025-03-13 11:16:35 [http-nio-8080-exec-2] DEBUG c.e.p.controller.AuthController - Accès à la page de login - Query string: null
+2025-03-13 11:16:35 [http-nio-8080-exec-2] DEBUG c.e.p.controller.AuthController - Vérification du blocage pour l'IP: 0:0:0:0:0:0:0:1
+2025-03-13 11:16:35 [http-nio-8080-exec-2] DEBUG c.e.p.controller.AuthController - IP non bloquée
+2025-03-13 11:16:36 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /favicon.ico
+2025-03-13 11:16:36 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-13 11:16:36 [http-nio-8080-exec-3] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to http://localhost:8080/login
+2025-03-13 11:16:36 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login
+2025-03-13 11:16:36 [http-nio-8080-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-13 11:16:36 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /login
+2025-03-13 11:16:36 [http-nio-8080-exec-4] DEBUG c.e.p.controller.AuthController - Accès à la page de login - Query string: null
+2025-03-13 11:16:36 [http-nio-8080-exec-4] DEBUG c.e.p.controller.AuthController - Vérification du blocage pour l'IP: 0:0:0:0:0:0:0:1
+2025-03-13 11:16:36 [http-nio-8080-exec-4] DEBUG c.e.p.controller.AuthController - IP non bloquée
+2025-03-13 11:16:46 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing POST /login
+2025-03-13 11:16:46 [http-nio-8080-exec-5] DEBUG o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
+2025-03-13 11:16:46 [http-nio-8080-exec-5] DEBUG o.s.s.w.a.s.ChangeSessionIdAuthenticationStrategy - Changed session id from E5D544685AA10D5C8717E5AC34DD9F9E
+2025-03-13 11:16:46 [http-nio-8080-exec-5] DEBUG o.s.s.c.session.SessionRegistryImpl - Registering session C5F89D8395271C7CB51FFD1319804C3A, for principal org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]]
+2025-03-13 11:16:46 [http-nio-8080-exec-5] DEBUG o.s.s.w.c.CsrfAuthenticationStrategy - Replaced CSRF Token
+2025-03-13 11:16:46 [http-nio-8080-exec-5] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Stored SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=E5D544685AA10D5C8717E5AC34DD9F9E], Granted Authorities=[ROLE_ADMIN]]] to HttpSession [org.apache.catalina.session.StandardSessionFacade@7bda87c7]
+2025-03-13 11:16:46 [http-nio-8080-exec-5] DEBUG o.s.s.w.a.UsernamePasswordAuthenticationFilter - Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=E5D544685AA10D5C8717E5AC34DD9F9E], Granted Authorities=[ROLE_ADMIN]]
+2025-03-13 11:16:46 [http-nio-8080-exec-5] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to /login-success
+2025-03-13 11:16:46 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login-success
+2025-03-13 11:16:46 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /login-success
+2025-03-13 11:16:46 [http-nio-8080-exec-6] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=E5D544685AA10D5C8717E5AC34DD9F9E], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 11:16:46 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /users
+2025-03-13 11:16:46 [http-nio-8080-exec-7] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=E5D544685AA10D5C8717E5AC34DD9F9E], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 11:16:46 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /users
+2025-03-13 11:16:46 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /favicon.ico
+2025-03-13 11:16:46 [http-nio-8080-exec-8] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=E5D544685AA10D5C8717E5AC34DD9F9E], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 11:16:46 [http-nio-8080-exec-8] DEBUG o.s.s.w.a.AccessDeniedHandlerImpl - Responding with 403 status code
+2025-03-13 11:16:46 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+2025-03-13 11:16:46 [http-nio-8080-exec-8] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=E5D544685AA10D5C8717E5AC34DD9F9E], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 11:16:46 [http-nio-8080-exec-8] DEBUG o.s.s.w.a.AccessDeniedHandlerImpl - Responding with 403 status code
+2025-03-13 11:16:51 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /register
+2025-03-13 11:16:51 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /register
+2025-03-13 11:16:51 [http-nio-8080-exec-9] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=E5D544685AA10D5C8717E5AC34DD9F9E], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 11:16:51 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /favicon.ico
+2025-03-13 11:16:51 [http-nio-8080-exec-10] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=E5D544685AA10D5C8717E5AC34DD9F9E], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 11:16:51 [http-nio-8080-exec-10] DEBUG o.s.s.w.a.AccessDeniedHandlerImpl - Responding with 403 status code
+2025-03-13 11:16:51 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+2025-03-13 11:16:51 [http-nio-8080-exec-10] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=E5D544685AA10D5C8717E5AC34DD9F9E], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 11:16:51 [http-nio-8080-exec-10] DEBUG o.s.s.w.a.AccessDeniedHandlerImpl - Responding with 403 status code
+2025-03-13 11:18:26 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-13 11:18:26 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-03-13 11:18:26 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-03-13 12:27:35 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+2025-03-13 12:27:35 [main] INFO  c.e.projetpfe.ProjetPfeApplication - Starting ProjetPfeApplication using Java 17.0.12 with PID 6268 (C:\Users\hiba3\IdeaProjects\ProjetPFE\target\classes started by hiba3 in C:\Users\hiba3\IdeaProjects\ProjetPFE)
+2025-03-13 12:27:35 [main] INFO  c.e.projetpfe.ProjetPfeApplication - No active profile set, falling back to 1 default profile: "default"
+2025-03-13 12:27:36 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-13 12:27:36 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 55 ms. Found 2 JPA repository interfaces.
+2025-03-13 12:27:37 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-03-13 12:27:37 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-03-13 12:27:37 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-03-13 12:27:37 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.1]
+2025-03-13 12:27:37 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-03-13 12:27:37 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1377 ms
+2025-03-13 12:27:37 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-13 12:27:37 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.5.Final
+2025-03-13 12:27:37 [main] WARN  org.hibernate.orm.deprecation - HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+2025-03-13 12:27:37 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-03-13 12:27:37 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@510da778
+2025-03-13 12:27:37 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-03-13 12:27:37 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2025-03-13 12:27:38 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-03-13 12:27:38 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-13 12:27:38 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-13 12:27:38 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+2025-03-13 12:27:39 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@8ad182c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7e84af34, org.springframework.security.web.context.SecurityContextHolderFilter@23f539df, org.springframework.security.web.header.HeaderWriterFilter@10f384a2, org.springframework.security.web.csrf.CsrfFilter@682d8dad, org.springframework.security.web.authentication.logout.LogoutFilter@5f7bd970, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@28befd62, org.springframework.security.web.session.ConcurrentSessionFilter@1d988297, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1f24e33d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@693ed09d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@218e186b, org.springframework.security.web.session.SessionManagementFilter@52a0bc48, org.springframework.security.web.access.ExceptionTranslationFilter@705eb026, org.springframework.security.web.access.intercept.AuthorizationFilter@7010c9e4]
+2025-03-13 12:27:39 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-03-13 12:27:39 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-03-13 12:27:39 [main] INFO  c.e.projetpfe.ProjetPfeApplication - Started ProjetPfeApplication in 4.271 seconds (process running for 5.199)
+2025-03-13 12:27:39 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-13 12:27:39 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-03-13 12:27:39 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 15 ms
+2025-03-13 12:27:39 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login
+2025-03-13 12:27:39 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-13 12:27:39 [http-nio-8080-exec-1] DEBUG o.s.s.w.s.SessionManagementFilter - Request requested invalid session id C5F89D8395271C7CB51FFD1319804C3A
+2025-03-13 12:27:39 [http-nio-8080-exec-1] DEBUG o.s.s.w.s.SimpleRedirectInvalidSessionStrategy - Starting new session (if required) and redirecting to '/login'
+2025-03-13 12:27:39 [http-nio-8080-exec-1] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to /login
+2025-03-13 12:27:39 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login
+2025-03-13 12:27:39 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-13 12:27:39 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /login
+2025-03-13 12:27:39 [http-nio-8080-exec-2] DEBUG c.e.p.controller.AuthController - Accès à la page de login - Query string: null
+2025-03-13 12:27:39 [http-nio-8080-exec-2] DEBUG c.e.p.controller.AuthController - Vérification du blocage pour l'IP: 0:0:0:0:0:0:0:1
+2025-03-13 12:27:39 [http-nio-8080-exec-2] DEBUG c.e.p.controller.AuthController - IP non bloquée
+2025-03-13 12:27:40 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /favicon.ico
+2025-03-13 12:27:40 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-13 12:27:40 [http-nio-8080-exec-3] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to http://localhost:8080/login
+2025-03-13 12:27:40 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login
+2025-03-13 12:27:40 [http-nio-8080-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-13 12:27:40 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /login
+2025-03-13 12:27:40 [http-nio-8080-exec-4] DEBUG c.e.p.controller.AuthController - Accès à la page de login - Query string: null
+2025-03-13 12:27:40 [http-nio-8080-exec-4] DEBUG c.e.p.controller.AuthController - Vérification du blocage pour l'IP: 0:0:0:0:0:0:0:1
+2025-03-13 12:27:40 [http-nio-8080-exec-4] DEBUG c.e.p.controller.AuthController - IP non bloquée
+2025-03-13 12:27:49 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing POST /login
+2025-03-13 12:27:49 [http-nio-8080-exec-5] DEBUG o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
+2025-03-13 12:27:49 [http-nio-8080-exec-5] DEBUG o.s.s.w.a.s.ChangeSessionIdAuthenticationStrategy - Changed session id from BB5153323CE3DF066F06EF5DFBAC5058
+2025-03-13 12:27:49 [http-nio-8080-exec-5] DEBUG o.s.s.c.session.SessionRegistryImpl - Registering session C770E60CD25E53E1D89DDFBB17CD1110, for principal org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]]
+2025-03-13 12:27:49 [http-nio-8080-exec-5] DEBUG o.s.s.w.c.CsrfAuthenticationStrategy - Replaced CSRF Token
+2025-03-13 12:27:49 [http-nio-8080-exec-5] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Stored SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=BB5153323CE3DF066F06EF5DFBAC5058], Granted Authorities=[ROLE_ADMIN]]] to HttpSession [org.apache.catalina.session.StandardSessionFacade@3b2f56df]
+2025-03-13 12:27:49 [http-nio-8080-exec-5] DEBUG o.s.s.w.a.UsernamePasswordAuthenticationFilter - Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=BB5153323CE3DF066F06EF5DFBAC5058], Granted Authorities=[ROLE_ADMIN]]
+2025-03-13 12:27:49 [http-nio-8080-exec-5] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to /login-success
+2025-03-13 12:27:49 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login-success
+2025-03-13 12:27:49 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /login-success
+2025-03-13 12:27:49 [http-nio-8080-exec-6] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=BB5153323CE3DF066F06EF5DFBAC5058], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 12:27:49 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /users
+2025-03-13 12:27:49 [http-nio-8080-exec-7] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=BB5153323CE3DF066F06EF5DFBAC5058], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 12:27:49 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /users
+2025-03-13 12:27:49 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /favicon.ico
+2025-03-13 12:27:49 [http-nio-8080-exec-8] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=BB5153323CE3DF066F06EF5DFBAC5058], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 12:27:49 [http-nio-8080-exec-8] DEBUG o.s.s.w.a.AccessDeniedHandlerImpl - Responding with 403 status code
+2025-03-13 12:27:49 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+2025-03-13 12:27:49 [http-nio-8080-exec-8] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=BB5153323CE3DF066F06EF5DFBAC5058], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 12:27:49 [http-nio-8080-exec-8] DEBUG o.s.s.w.a.AccessDeniedHandlerImpl - Responding with 403 status code
+2025-03-13 12:28:02 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /delete-user/
+2025-03-13 12:28:02 [http-nio-8080-exec-9] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=BB5153323CE3DF066F06EF5DFBAC5058], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 12:28:02 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /delete-user/
+2025-03-13 12:28:02 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+2025-03-13 12:28:02 [http-nio-8080-exec-9] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=BB5153323CE3DF066F06EF5DFBAC5058], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 12:28:02 [http-nio-8080-exec-9] DEBUG o.s.s.w.a.AccessDeniedHandlerImpl - Responding with 403 status code
+2025-03-13 12:28:07 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /delete-user/
+2025-03-13 12:28:07 [http-nio-8080-exec-10] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=BB5153323CE3DF066F06EF5DFBAC5058], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 12:28:07 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /delete-user/
+2025-03-13 12:28:07 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+2025-03-13 12:28:07 [http-nio-8080-exec-10] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=BB5153323CE3DF066F06EF5DFBAC5058], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 12:28:07 [http-nio-8080-exec-10] DEBUG o.s.s.w.a.AccessDeniedHandlerImpl - Responding with 403 status code
+2025-03-13 12:30:05 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-13 12:30:05 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-03-13 12:30:05 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-03-13 14:07:35 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+2025-03-13 14:07:35 [main] INFO  c.e.projetpfe.ProjetPfeApplication - Starting ProjetPfeApplication using Java 17.0.12 with PID 3220 (C:\Users\hiba3\IdeaProjects\ProjetPFE\target\classes started by hiba3 in C:\Users\hiba3\IdeaProjects\ProjetPFE)
+2025-03-13 14:07:35 [main] INFO  c.e.projetpfe.ProjetPfeApplication - No active profile set, falling back to 1 default profile: "default"
+2025-03-13 14:07:36 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-13 14:07:36 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 65 ms. Found 2 JPA repository interfaces.
+2025-03-13 14:07:36 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-03-13 14:07:36 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-03-13 14:07:36 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-03-13 14:07:36 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.1]
+2025-03-13 14:07:37 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-03-13 14:07:37 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1280 ms
+2025-03-13 14:07:37 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-13 14:07:37 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.5.Final
+2025-03-13 14:07:37 [main] WARN  org.hibernate.orm.deprecation - HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+2025-03-13 14:07:37 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-03-13 14:07:37 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@25de8898
+2025-03-13 14:07:37 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-03-13 14:07:37 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2025-03-13 14:07:38 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-03-13 14:07:38 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-13 14:07:39 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-13 14:07:39 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+2025-03-13 14:07:39 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2d399e88, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@18139a43, org.springframework.security.web.context.SecurityContextHolderFilter@3dbf3bc, org.springframework.security.web.header.HeaderWriterFilter@218e186b, org.springframework.security.web.csrf.CsrfFilter@3e4ead73, org.springframework.security.web.authentication.logout.LogoutFilter@7505dcab, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@f2b4303, org.springframework.security.web.session.ConcurrentSessionFilter@8a7cd7c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3b850bb7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3a225534, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4df5f119, org.springframework.security.web.session.SessionManagementFilter@612531a3, org.springframework.security.web.access.ExceptionTranslationFilter@8ad182c, org.springframework.security.web.access.intercept.AuthorizationFilter@71689ee2]
+2025-03-13 14:07:39 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-03-13 14:07:39 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-03-13 14:07:39 [main] INFO  c.e.projetpfe.ProjetPfeApplication - Started ProjetPfeApplication in 4.388 seconds (process running for 5.246)
+2025-03-13 14:07:39 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-13 14:07:39 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-03-13 14:07:39 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-03-13 14:07:39 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login
+2025-03-13 14:07:39 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-13 14:07:39 [http-nio-8080-exec-1] DEBUG o.s.s.w.s.SessionManagementFilter - Request requested invalid session id C770E60CD25E53E1D89DDFBB17CD1110
+2025-03-13 14:07:39 [http-nio-8080-exec-1] DEBUG o.s.s.w.s.SimpleRedirectInvalidSessionStrategy - Starting new session (if required) and redirecting to '/login'
+2025-03-13 14:07:39 [http-nio-8080-exec-1] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to /login
+2025-03-13 14:07:39 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login
+2025-03-13 14:07:39 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-13 14:07:39 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /login
+2025-03-13 14:07:39 [http-nio-8080-exec-2] DEBUG c.e.p.controller.AuthController - Accès à la page de login - Query string: null
+2025-03-13 14:07:39 [http-nio-8080-exec-2] DEBUG c.e.p.controller.AuthController - Vérification du blocage pour l'IP: 0:0:0:0:0:0:0:1
+2025-03-13 14:07:39 [http-nio-8080-exec-2] DEBUG c.e.p.controller.AuthController - IP non bloquée
+2025-03-13 14:07:40 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /favicon.ico
+2025-03-13 14:07:40 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-13 14:07:40 [http-nio-8080-exec-3] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to http://localhost:8080/login
+2025-03-13 14:07:40 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login
+2025-03-13 14:07:40 [http-nio-8080-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-13 14:07:40 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /login
+2025-03-13 14:07:40 [http-nio-8080-exec-4] DEBUG c.e.p.controller.AuthController - Accès à la page de login - Query string: null
+2025-03-13 14:07:40 [http-nio-8080-exec-4] DEBUG c.e.p.controller.AuthController - Vérification du blocage pour l'IP: 0:0:0:0:0:0:0:1
+2025-03-13 14:07:40 [http-nio-8080-exec-4] DEBUG c.e.p.controller.AuthController - IP non bloquée
+2025-03-13 14:07:49 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing POST /login
+2025-03-13 14:07:49 [http-nio-8080-exec-5] DEBUG o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
+2025-03-13 14:07:49 [http-nio-8080-exec-5] DEBUG o.s.s.w.a.s.ChangeSessionIdAuthenticationStrategy - Changed session id from B7989BA4EFB620FD6DAF7911D0A47194
+2025-03-13 14:07:49 [http-nio-8080-exec-5] DEBUG o.s.s.c.session.SessionRegistryImpl - Registering session 2DDEC43B980FA067D3DB4299749A3BB6, for principal org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]]
+2025-03-13 14:07:49 [http-nio-8080-exec-5] DEBUG o.s.s.w.c.CsrfAuthenticationStrategy - Replaced CSRF Token
+2025-03-13 14:07:49 [http-nio-8080-exec-5] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Stored SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=B7989BA4EFB620FD6DAF7911D0A47194], Granted Authorities=[ROLE_ADMIN]]] to HttpSession [org.apache.catalina.session.StandardSessionFacade@6ea25334]
+2025-03-13 14:07:49 [http-nio-8080-exec-5] DEBUG o.s.s.w.a.UsernamePasswordAuthenticationFilter - Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=B7989BA4EFB620FD6DAF7911D0A47194], Granted Authorities=[ROLE_ADMIN]]
+2025-03-13 14:07:49 [http-nio-8080-exec-5] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to /login-success
+2025-03-13 14:07:49 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login-success
+2025-03-13 14:07:49 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /login-success
+2025-03-13 14:07:49 [http-nio-8080-exec-6] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=B7989BA4EFB620FD6DAF7911D0A47194], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 14:07:49 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /users
+2025-03-13 14:07:49 [http-nio-8080-exec-7] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=B7989BA4EFB620FD6DAF7911D0A47194], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 14:07:49 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /users
+2025-03-13 14:07:49 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /favicon.ico
+2025-03-13 14:07:49 [http-nio-8080-exec-8] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=B7989BA4EFB620FD6DAF7911D0A47194], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 14:07:49 [http-nio-8080-exec-8] DEBUG o.s.s.w.a.AccessDeniedHandlerImpl - Responding with 403 status code
+2025-03-13 14:07:49 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+2025-03-13 14:07:50 [http-nio-8080-exec-8] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=B7989BA4EFB620FD6DAF7911D0A47194], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 14:07:50 [http-nio-8080-exec-8] DEBUG o.s.s.w.a.AccessDeniedHandlerImpl - Responding with 403 status code
+2025-03-13 14:07:58 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /delete-user/
+2025-03-13 14:07:58 [http-nio-8080-exec-9] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=B7989BA4EFB620FD6DAF7911D0A47194], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 14:07:58 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /delete-user/
+2025-03-13 14:07:58 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+2025-03-13 14:07:58 [http-nio-8080-exec-9] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=B7989BA4EFB620FD6DAF7911D0A47194], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 14:07:58 [http-nio-8080-exec-9] DEBUG o.s.s.w.a.AccessDeniedHandlerImpl - Responding with 403 status code
+2025-03-13 14:08:02 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /users
+2025-03-13 14:08:02 [http-nio-8080-exec-10] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=B7989BA4EFB620FD6DAF7911D0A47194], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 14:08:02 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /users
+2025-03-13 14:08:02 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /favicon.ico
+2025-03-13 14:08:02 [http-nio-8080-exec-1] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=B7989BA4EFB620FD6DAF7911D0A47194], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 14:08:02 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.AccessDeniedHandlerImpl - Responding with 403 status code
+2025-03-13 14:08:02 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+2025-03-13 14:08:02 [http-nio-8080-exec-1] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=B7989BA4EFB620FD6DAF7911D0A47194], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 14:08:02 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.AccessDeniedHandlerImpl - Responding with 403 status code
+2025-03-13 14:10:41 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-13 14:10:41 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-03-13 14:10:41 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-03-13 14:10:46 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+2025-03-13 14:10:46 [main] INFO  c.e.projetpfe.ProjetPfeApplication - Starting ProjetPfeApplication using Java 17.0.12 with PID 18272 (C:\Users\hiba3\IdeaProjects\ProjetPFE\target\classes started by hiba3 in C:\Users\hiba3\IdeaProjects\ProjetPFE)
+2025-03-13 14:10:46 [main] INFO  c.e.projetpfe.ProjetPfeApplication - No active profile set, falling back to 1 default profile: "default"
+2025-03-13 14:10:46 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-13 14:10:46 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 55 ms. Found 2 JPA repository interfaces.
+2025-03-13 14:10:47 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-03-13 14:10:47 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-03-13 14:10:47 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-03-13 14:10:47 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.1]
+2025-03-13 14:10:47 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-03-13 14:10:47 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1446 ms
+2025-03-13 14:10:47 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-13 14:10:47 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.5.Final
+2025-03-13 14:10:48 [main] WARN  org.hibernate.orm.deprecation - HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+2025-03-13 14:10:48 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-03-13 14:10:48 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@25de8898
+2025-03-13 14:10:48 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-03-13 14:10:48 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2025-03-13 14:10:49 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-03-13 14:10:49 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-13 14:10:50 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-13 14:10:50 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+2025-03-13 14:10:50 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1d126f07, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@71689ee2, org.springframework.security.web.context.SecurityContextHolderFilter@641c8ba4, org.springframework.security.web.header.HeaderWriterFilter@28befd62, org.springframework.security.web.csrf.CsrfFilter@1d6014a7, org.springframework.security.web.authentication.logout.LogoutFilter@1f370472, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1d4c6e32, org.springframework.security.web.session.ConcurrentSessionFilter@4fea23d6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@75559cd9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3b850bb7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@f2b4303, org.springframework.security.web.session.SessionManagementFilter@8ad182c, org.springframework.security.web.access.ExceptionTranslationFilter@763ddfc3, org.springframework.security.web.access.intercept.AuthorizationFilter@57777c23]
+2025-03-13 14:10:50 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-03-13 14:10:50 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-03-13 14:10:50 [main] INFO  c.e.projetpfe.ProjetPfeApplication - Started ProjetPfeApplication in 4.749 seconds (process running for 5.611)
+2025-03-13 14:10:50 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-13 14:10:50 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-03-13 14:10:50 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2025-03-13 14:10:50 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login
+2025-03-13 14:10:50 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-13 14:10:50 [http-nio-8080-exec-1] DEBUG o.s.s.w.s.SessionManagementFilter - Request requested invalid session id 2DDEC43B980FA067D3DB4299749A3BB6
+2025-03-13 14:10:50 [http-nio-8080-exec-1] DEBUG o.s.s.w.s.SimpleRedirectInvalidSessionStrategy - Starting new session (if required) and redirecting to '/login'
+2025-03-13 14:10:50 [http-nio-8080-exec-1] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to /login
+2025-03-13 14:10:50 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login
+2025-03-13 14:10:50 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-13 14:10:50 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /login
+2025-03-13 14:10:50 [http-nio-8080-exec-2] DEBUG c.e.p.controller.AuthController - Accès à la page de login - Query string: null
+2025-03-13 14:10:50 [http-nio-8080-exec-2] DEBUG c.e.p.controller.AuthController - Vérification du blocage pour l'IP: 0:0:0:0:0:0:0:1
+2025-03-13 14:10:50 [http-nio-8080-exec-2] DEBUG c.e.p.controller.AuthController - IP non bloquée
+2025-03-13 14:10:51 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /favicon.ico
+2025-03-13 14:10:51 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-13 14:10:51 [http-nio-8080-exec-3] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to http://localhost:8080/login
+2025-03-13 14:10:51 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login
+2025-03-13 14:10:51 [http-nio-8080-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-13 14:10:51 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /login
+2025-03-13 14:10:51 [http-nio-8080-exec-4] DEBUG c.e.p.controller.AuthController - Accès à la page de login - Query string: null
+2025-03-13 14:10:51 [http-nio-8080-exec-4] DEBUG c.e.p.controller.AuthController - Vérification du blocage pour l'IP: 0:0:0:0:0:0:0:1
+2025-03-13 14:10:51 [http-nio-8080-exec-4] DEBUG c.e.p.controller.AuthController - IP non bloquée
+2025-03-13 14:11:00 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing POST /login
+2025-03-13 14:11:01 [http-nio-8080-exec-5] DEBUG o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
+2025-03-13 14:11:01 [http-nio-8080-exec-5] DEBUG o.s.s.w.a.s.ChangeSessionIdAuthenticationStrategy - Changed session id from 06EBAFD4CDEBD9128973F0B155BD424B
+2025-03-13 14:11:01 [http-nio-8080-exec-5] DEBUG o.s.s.c.session.SessionRegistryImpl - Registering session 95A22804BAAEBC0E37413E46372C65F3, for principal org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]]
+2025-03-13 14:11:01 [http-nio-8080-exec-5] DEBUG o.s.s.w.c.CsrfAuthenticationStrategy - Replaced CSRF Token
+2025-03-13 14:11:01 [http-nio-8080-exec-5] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Stored SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=06EBAFD4CDEBD9128973F0B155BD424B], Granted Authorities=[ROLE_ADMIN]]] to HttpSession [org.apache.catalina.session.StandardSessionFacade@39ac0e1c]
+2025-03-13 14:11:01 [http-nio-8080-exec-5] DEBUG o.s.s.w.a.UsernamePasswordAuthenticationFilter - Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=06EBAFD4CDEBD9128973F0B155BD424B], Granted Authorities=[ROLE_ADMIN]]
+2025-03-13 14:11:01 [http-nio-8080-exec-5] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to /login-success
+2025-03-13 14:11:01 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login-success
+2025-03-13 14:11:01 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /login-success
+2025-03-13 14:11:01 [http-nio-8080-exec-6] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=06EBAFD4CDEBD9128973F0B155BD424B], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 14:11:01 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /users
+2025-03-13 14:11:01 [http-nio-8080-exec-7] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=06EBAFD4CDEBD9128973F0B155BD424B], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 14:11:01 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /users
+2025-03-13 14:11:01 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /favicon.ico
+2025-03-13 14:11:01 [http-nio-8080-exec-8] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=06EBAFD4CDEBD9128973F0B155BD424B], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 14:11:01 [http-nio-8080-exec-8] DEBUG o.s.s.w.a.AccessDeniedHandlerImpl - Responding with 403 status code
+2025-03-13 14:11:01 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+2025-03-13 14:11:01 [http-nio-8080-exec-8] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=06EBAFD4CDEBD9128973F0B155BD424B], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 14:11:01 [http-nio-8080-exec-8] DEBUG o.s.s.w.a.AccessDeniedHandlerImpl - Responding with 403 status code
+2025-03-13 14:11:07 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /delete-user/3
+2025-03-13 14:11:07 [http-nio-8080-exec-9] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=06EBAFD4CDEBD9128973F0B155BD424B], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 14:11:07 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /delete-user/3
+2025-03-13 14:11:07 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /users?success=userDeleted
+2025-03-13 14:11:07 [http-nio-8080-exec-10] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=06EBAFD4CDEBD9128973F0B155BD424B], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 14:11:07 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /users?success=userDeleted
+2025-03-13 14:11:07 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /favicon.ico
+2025-03-13 14:11:07 [http-nio-8080-exec-1] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=06EBAFD4CDEBD9128973F0B155BD424B], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 14:11:07 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.AccessDeniedHandlerImpl - Responding with 403 status code
+2025-03-13 14:11:07 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+2025-03-13 14:11:07 [http-nio-8080-exec-1] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=06EBAFD4CDEBD9128973F0B155BD424B], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 14:11:07 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.AccessDeniedHandlerImpl - Responding with 403 status code
+2025-03-13 14:13:35 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-13 14:13:35 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-03-13 14:13:35 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-03-13 14:21:13 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+2025-03-13 14:21:13 [main] INFO  c.e.projetpfe.ProjetPfeApplication - Starting ProjetPfeApplication using Java 17.0.12 with PID 18764 (C:\Users\hiba3\IdeaProjects\ProjetPFE\target\classes started by hiba3 in C:\Users\hiba3\IdeaProjects\ProjetPFE)
+2025-03-13 14:21:13 [main] INFO  c.e.projetpfe.ProjetPfeApplication - No active profile set, falling back to 1 default profile: "default"
+2025-03-13 14:21:14 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-13 14:21:14 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 53 ms. Found 2 JPA repository interfaces.
+2025-03-13 14:21:14 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-03-13 14:21:14 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-03-13 14:21:14 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-03-13 14:21:14 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.1]
+2025-03-13 14:21:14 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-03-13 14:21:14 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1169 ms
+2025-03-13 14:21:14 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-13 14:21:14 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.5.Final
+2025-03-13 14:21:15 [main] WARN  org.hibernate.orm.deprecation - HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+2025-03-13 14:21:15 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-03-13 14:21:15 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4c56644f
+2025-03-13 14:21:15 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-03-13 14:21:15 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2025-03-13 14:21:16 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-03-13 14:21:16 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-13 14:21:16 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-13 14:21:16 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+2025-03-13 14:21:16 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@54224125, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7c013560, org.springframework.security.web.context.SecurityContextHolderFilter@9863ed5, org.springframework.security.web.header.HeaderWriterFilter@1d45c4b7, org.springframework.security.web.csrf.CsrfFilter@576a8b00, org.springframework.security.web.authentication.logout.LogoutFilter@52667676, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@44d6f9cf, org.springframework.security.web.session.ConcurrentSessionFilter@5f7bd970, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7010c9e4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7e84af34, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@feab3ae, org.springframework.security.web.session.SessionManagementFilter@1d6014a7, org.springframework.security.web.access.ExceptionTranslationFilter@62f73b0c, org.springframework.security.web.access.intercept.AuthorizationFilter@3a225534]
+2025-03-13 14:21:16 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-03-13 14:21:17 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-03-13 14:21:17 [main] INFO  c.e.projetpfe.ProjetPfeApplication - Started ProjetPfeApplication in 3.816 seconds (process running for 4.622)
+2025-03-13 14:21:36 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-13 14:21:36 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-03-13 14:21:36 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2025-03-13 14:21:36 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login
+2025-03-13 14:21:36 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-13 14:21:36 [http-nio-8080-exec-1] DEBUG o.s.s.w.s.SessionManagementFilter - Request requested invalid session id 95A22804BAAEBC0E37413E46372C65F3
+2025-03-13 14:21:36 [http-nio-8080-exec-1] DEBUG o.s.s.w.s.SimpleRedirectInvalidSessionStrategy - Starting new session (if required) and redirecting to '/login'
+2025-03-13 14:21:36 [http-nio-8080-exec-1] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to /login
+2025-03-13 14:21:36 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login
+2025-03-13 14:21:36 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-13 14:21:36 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /login
+2025-03-13 14:21:37 [http-nio-8080-exec-2] DEBUG c.e.p.controller.AuthController - Accès à la page de login - Query string: null
+2025-03-13 14:21:37 [http-nio-8080-exec-2] DEBUG c.e.p.controller.AuthController - Vérification du blocage pour l'IP: 0:0:0:0:0:0:0:1
+2025-03-13 14:21:37 [http-nio-8080-exec-2] DEBUG c.e.p.controller.AuthController - IP non bloquée
+2025-03-13 14:21:37 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /favicon.ico
+2025-03-13 14:21:37 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-13 14:21:37 [http-nio-8080-exec-3] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to http://localhost:8080/login
+2025-03-13 14:21:37 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login
+2025-03-13 14:21:37 [http-nio-8080-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-13 14:21:37 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /login
+2025-03-13 14:21:37 [http-nio-8080-exec-4] DEBUG c.e.p.controller.AuthController - Accès à la page de login - Query string: null
+2025-03-13 14:21:37 [http-nio-8080-exec-4] DEBUG c.e.p.controller.AuthController - Vérification du blocage pour l'IP: 0:0:0:0:0:0:0:1
+2025-03-13 14:21:37 [http-nio-8080-exec-4] DEBUG c.e.p.controller.AuthController - IP non bloquée
+2025-03-13 14:21:47 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing POST /login
+2025-03-13 14:21:47 [http-nio-8080-exec-5] DEBUG o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
+2025-03-13 14:21:47 [http-nio-8080-exec-5] DEBUG o.s.s.w.a.s.ChangeSessionIdAuthenticationStrategy - Changed session id from 819556DBA3329097C0BE324D1C6EAE1D
+2025-03-13 14:21:47 [http-nio-8080-exec-5] DEBUG o.s.s.c.session.SessionRegistryImpl - Registering session E0CA101029D204DE39BF2CA524691509, for principal org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]]
+2025-03-13 14:21:47 [http-nio-8080-exec-5] DEBUG o.s.s.w.c.CsrfAuthenticationStrategy - Replaced CSRF Token
+2025-03-13 14:21:47 [http-nio-8080-exec-5] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Stored SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=819556DBA3329097C0BE324D1C6EAE1D], Granted Authorities=[ROLE_ADMIN]]] to HttpSession [org.apache.catalina.session.StandardSessionFacade@46dac1cd]
+2025-03-13 14:21:47 [http-nio-8080-exec-5] DEBUG o.s.s.w.a.UsernamePasswordAuthenticationFilter - Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=819556DBA3329097C0BE324D1C6EAE1D], Granted Authorities=[ROLE_ADMIN]]
+2025-03-13 14:21:47 [http-nio-8080-exec-5] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to /login-success
+2025-03-13 14:21:47 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login-success
+2025-03-13 14:21:47 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /login-success
+2025-03-13 14:21:47 [http-nio-8080-exec-6] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=819556DBA3329097C0BE324D1C6EAE1D], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 14:21:47 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /users
+2025-03-13 14:21:47 [http-nio-8080-exec-7] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=819556DBA3329097C0BE324D1C6EAE1D], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 14:21:47 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /users
+2025-03-13 14:21:47 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /favicon.ico
+2025-03-13 14:21:47 [http-nio-8080-exec-8] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=819556DBA3329097C0BE324D1C6EAE1D], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 14:21:47 [http-nio-8080-exec-8] DEBUG o.s.s.w.a.AccessDeniedHandlerImpl - Responding with 403 status code
+2025-03-13 14:21:47 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+2025-03-13 14:21:47 [http-nio-8080-exec-8] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=819556DBA3329097C0BE324D1C6EAE1D], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 14:21:47 [http-nio-8080-exec-8] DEBUG o.s.s.w.a.AccessDeniedHandlerImpl - Responding with 403 status code
+2025-03-13 14:21:52 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /edit-user/2
+2025-03-13 14:21:52 [http-nio-8080-exec-9] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=819556DBA3329097C0BE324D1C6EAE1D], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 14:21:52 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /edit-user/2
+2025-03-13 14:21:53 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /favicon.ico
+2025-03-13 14:21:53 [http-nio-8080-exec-10] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=819556DBA3329097C0BE324D1C6EAE1D], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 14:21:53 [http-nio-8080-exec-10] DEBUG o.s.s.w.a.AccessDeniedHandlerImpl - Responding with 403 status code
+2025-03-13 14:21:53 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+2025-03-13 14:21:53 [http-nio-8080-exec-10] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=819556DBA3329097C0BE324D1C6EAE1D], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 14:21:53 [http-nio-8080-exec-10] DEBUG o.s.s.w.a.AccessDeniedHandlerImpl - Responding with 403 status code
+2025-03-13 14:22:12 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing POST /edit-user/2
+2025-03-13 14:22:12 [http-nio-8080-exec-3] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=819556DBA3329097C0BE324D1C6EAE1D], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 14:22:12 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured POST /edit-user/2
+2025-03-13 14:22:12 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /favicon.ico
+2025-03-13 14:22:12 [http-nio-8080-exec-4] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=819556DBA3329097C0BE324D1C6EAE1D], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 14:22:12 [http-nio-8080-exec-4] DEBUG o.s.s.w.a.AccessDeniedHandlerImpl - Responding with 403 status code
+2025-03-13 14:22:12 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+2025-03-13 14:22:12 [http-nio-8080-exec-4] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=819556DBA3329097C0BE324D1C6EAE1D], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 14:22:12 [http-nio-8080-exec-4] DEBUG o.s.s.w.a.AccessDeniedHandlerImpl - Responding with 403 status code
+2025-03-13 14:22:25 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing POST /edit-user/2
+2025-03-13 14:22:25 [http-nio-8080-exec-5] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=819556DBA3329097C0BE324D1C6EAE1D], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 14:22:25 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured POST /edit-user/2
+2025-03-13 14:22:25 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /users?success=userUpdated
+2025-03-13 14:22:25 [http-nio-8080-exec-6] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=819556DBA3329097C0BE324D1C6EAE1D], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 14:22:25 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /users?success=userUpdated
+2025-03-13 14:22:25 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /favicon.ico
+2025-03-13 14:22:25 [http-nio-8080-exec-7] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=819556DBA3329097C0BE324D1C6EAE1D], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 14:22:25 [http-nio-8080-exec-7] DEBUG o.s.s.w.a.AccessDeniedHandlerImpl - Responding with 403 status code
+2025-03-13 14:22:25 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+2025-03-13 14:22:25 [http-nio-8080-exec-7] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=819556DBA3329097C0BE324D1C6EAE1D], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 14:22:25 [http-nio-8080-exec-7] DEBUG o.s.s.w.a.AccessDeniedHandlerImpl - Responding with 403 status code
+2025-03-13 14:22:31 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /edit-user/2
+2025-03-13 14:22:31 [http-nio-8080-exec-8] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=819556DBA3329097C0BE324D1C6EAE1D], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 14:22:31 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /edit-user/2
+2025-03-13 14:22:31 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /favicon.ico
+2025-03-13 14:22:31 [http-nio-8080-exec-9] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=819556DBA3329097C0BE324D1C6EAE1D], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 14:22:31 [http-nio-8080-exec-9] DEBUG o.s.s.w.a.AccessDeniedHandlerImpl - Responding with 403 status code
+2025-03-13 14:22:31 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+2025-03-13 14:22:31 [http-nio-8080-exec-9] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=819556DBA3329097C0BE324D1C6EAE1D], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 14:22:31 [http-nio-8080-exec-9] DEBUG o.s.s.w.a.AccessDeniedHandlerImpl - Responding with 403 status code
+2025-03-13 14:22:39 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing POST /edit-user/2
+2025-03-13 14:22:39 [http-nio-8080-exec-10] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=819556DBA3329097C0BE324D1C6EAE1D], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 14:22:39 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured POST /edit-user/2
+2025-03-13 14:22:39 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /users?success=userUpdated
+2025-03-13 14:22:39 [http-nio-8080-exec-2] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=819556DBA3329097C0BE324D1C6EAE1D], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 14:22:39 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /users?success=userUpdated
+2025-03-13 14:22:39 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /favicon.ico
+2025-03-13 14:22:39 [http-nio-8080-exec-1] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=819556DBA3329097C0BE324D1C6EAE1D], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 14:22:39 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.AccessDeniedHandlerImpl - Responding with 403 status code
+2025-03-13 14:22:39 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+2025-03-13 14:22:39 [http-nio-8080-exec-1] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=819556DBA3329097C0BE324D1C6EAE1D], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 14:22:39 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.AccessDeniedHandlerImpl - Responding with 403 status code
+2025-03-13 14:22:43 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /edit-user/2
+2025-03-13 14:22:43 [http-nio-8080-exec-3] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=819556DBA3329097C0BE324D1C6EAE1D], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 14:22:43 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /edit-user/2
+2025-03-13 14:22:43 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /favicon.ico
+2025-03-13 14:22:43 [http-nio-8080-exec-4] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=819556DBA3329097C0BE324D1C6EAE1D], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 14:22:43 [http-nio-8080-exec-4] DEBUG o.s.s.w.a.AccessDeniedHandlerImpl - Responding with 403 status code
+2025-03-13 14:22:43 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+2025-03-13 14:22:43 [http-nio-8080-exec-4] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=819556DBA3329097C0BE324D1C6EAE1D], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 14:22:43 [http-nio-8080-exec-4] DEBUG o.s.s.w.a.AccessDeniedHandlerImpl - Responding with 403 status code
+2025-03-13 14:22:49 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /users
+2025-03-13 14:22:49 [http-nio-8080-exec-5] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=819556DBA3329097C0BE324D1C6EAE1D], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 14:22:49 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /users
+2025-03-13 14:22:49 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /favicon.ico
+2025-03-13 14:22:49 [http-nio-8080-exec-6] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=819556DBA3329097C0BE324D1C6EAE1D], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 14:22:49 [http-nio-8080-exec-6] DEBUG o.s.s.w.a.AccessDeniedHandlerImpl - Responding with 403 status code
+2025-03-13 14:22:49 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+2025-03-13 14:22:49 [http-nio-8080-exec-6] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=819556DBA3329097C0BE324D1C6EAE1D], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 14:22:49 [http-nio-8080-exec-6] DEBUG o.s.s.w.a.AccessDeniedHandlerImpl - Responding with 403 status code
+2025-03-13 14:22:52 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /favicon.ico
+2025-03-13 14:22:52 [http-nio-8080-exec-7] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=819556DBA3329097C0BE324D1C6EAE1D], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 14:22:52 [http-nio-8080-exec-7] DEBUG o.s.s.w.a.AccessDeniedHandlerImpl - Responding with 403 status code
+2025-03-13 14:22:52 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+2025-03-13 14:22:52 [http-nio-8080-exec-7] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=819556DBA3329097C0BE324D1C6EAE1D], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 14:22:52 [http-nio-8080-exec-7] DEBUG o.s.s.w.a.AccessDeniedHandlerImpl - Responding with 403 status code
+2025-03-13 14:23:35 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /edit-user/2
+2025-03-13 14:23:35 [http-nio-8080-exec-9] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=819556DBA3329097C0BE324D1C6EAE1D], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 14:23:35 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /edit-user/2
+2025-03-13 14:23:35 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /favicon.ico
+2025-03-13 14:23:35 [http-nio-8080-exec-10] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=819556DBA3329097C0BE324D1C6EAE1D], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 14:23:35 [http-nio-8080-exec-10] DEBUG o.s.s.w.a.AccessDeniedHandlerImpl - Responding with 403 status code
+2025-03-13 14:23:35 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+2025-03-13 14:23:35 [http-nio-8080-exec-10] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=819556DBA3329097C0BE324D1C6EAE1D], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 14:23:35 [http-nio-8080-exec-10] DEBUG o.s.s.w.a.AccessDeniedHandlerImpl - Responding with 403 status code
+2025-03-13 14:24:03 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing POST /edit-user/2
+2025-03-13 14:24:03 [http-nio-8080-exec-2] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=819556DBA3329097C0BE324D1C6EAE1D], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 14:24:03 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured POST /edit-user/2
+2025-03-13 14:24:03 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /users?success=userUpdated
+2025-03-13 14:24:03 [http-nio-8080-exec-1] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=819556DBA3329097C0BE324D1C6EAE1D], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 14:24:03 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /users?success=userUpdated
+2025-03-13 14:24:03 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /favicon.ico
+2025-03-13 14:24:03 [http-nio-8080-exec-3] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=819556DBA3329097C0BE324D1C6EAE1D], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 14:24:03 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.AccessDeniedHandlerImpl - Responding with 403 status code
+2025-03-13 14:24:03 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+2025-03-13 14:24:03 [http-nio-8080-exec-3] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=819556DBA3329097C0BE324D1C6EAE1D], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 14:24:03 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.AccessDeniedHandlerImpl - Responding with 403 status code
+2025-03-13 14:24:10 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /logout
+2025-03-13 14:24:10 [http-nio-8080-exec-4] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=819556DBA3329097C0BE324D1C6EAE1D], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 14:24:10 [http-nio-8080-exec-4] DEBUG o.s.s.w.a.logout.LogoutFilter - Logging out [UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@example.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=819556DBA3329097C0BE324D1C6EAE1D], Granted Authorities=[ROLE_ADMIN]]]
+2025-03-13 14:24:10 [http-nio-8080-exec-4] DEBUG o.s.s.w.a.l.SecurityContextLogoutHandler - Invalidated session E0CA101029D204DE39BF2CA524691509
+2025-03-13 14:24:10 [http-nio-8080-exec-4] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to /login?logout
+2025-03-13 14:24:10 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login?logout
+2025-03-13 14:24:10 [http-nio-8080-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-13 14:24:10 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /login?logout
+2025-03-13 14:24:10 [http-nio-8080-exec-5] DEBUG c.e.p.controller.AuthController - Accès à la page de login - Query string: logout
+2025-03-13 14:24:10 [http-nio-8080-exec-5] DEBUG c.e.p.controller.AuthController - Vérification du blocage pour l'IP: 0:0:0:0:0:0:0:1
+2025-03-13 14:24:10 [http-nio-8080-exec-5] DEBUG c.e.p.controller.AuthController - IP non bloquée
+2025-03-13 14:24:10 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /favicon.ico
+2025-03-13 14:24:10 [http-nio-8080-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-13 14:24:10 [http-nio-8080-exec-6] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to http://localhost:8080/login
+2025-03-13 14:24:10 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login
+2025-03-13 14:24:10 [http-nio-8080-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-13 14:24:10 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /login
+2025-03-13 14:24:10 [http-nio-8080-exec-7] DEBUG c.e.p.controller.AuthController - Accès à la page de login - Query string: null
+2025-03-13 14:24:10 [http-nio-8080-exec-7] DEBUG c.e.p.controller.AuthController - Vérification du blocage pour l'IP: 0:0:0:0:0:0:0:1
+2025-03-13 14:24:10 [http-nio-8080-exec-7] DEBUG c.e.p.controller.AuthController - IP non bloquée
+2025-03-13 14:24:21 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing POST /login
+2025-03-13 14:24:21 [http-nio-8080-exec-8] DEBUG o.s.s.a.d.DaoAuthenticationProvider - Failed to authenticate since password does not match stored value
+2025-03-13 14:24:21 [http-nio-8080-exec-8] DEBUG c.e.p.s.CustomAuthenticationFailureHandler - Authentication failure for IP: 0:0:0:0:0:0:0:1
+2025-03-13 14:24:21 [http-nio-8080-exec-8] DEBUG c.e.p.s.CustomAuthenticationFailureHandler - Échec d'authentification standard pour l'IP 0:0:0:0:0:0:0:1, redirection vers /login?error
+2025-03-13 14:24:21 [http-nio-8080-exec-8] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to /login?error
+2025-03-13 14:24:21 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login?error
+2025-03-13 14:24:21 [http-nio-8080-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-13 14:24:21 [http-nio-8080-exec-9] DEBUG o.s.s.w.s.HttpSessionRequestCache - Saved request http://localhost:8080/login?error&continue to session
+2025-03-13 14:24:21 [http-nio-8080-exec-9] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to http://localhost:8080/login
+2025-03-13 14:24:21 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login
+2025-03-13 14:24:22 [http-nio-8080-exec-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-13 14:24:22 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /login
+2025-03-13 14:24:22 [http-nio-8080-exec-10] DEBUG c.e.p.controller.AuthController - Accès à la page de login - Query string: null
+2025-03-13 14:24:22 [http-nio-8080-exec-10] DEBUG c.e.p.controller.AuthController - Vérification du blocage pour l'IP: 0:0:0:0:0:0:0:1
+2025-03-13 14:24:22 [http-nio-8080-exec-10] DEBUG c.e.p.controller.AuthController - IP non bloquée
+2025-03-13 14:24:22 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /favicon.ico
+2025-03-13 14:24:22 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-13 14:24:22 [http-nio-8080-exec-2] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to http://localhost:8080/login
+2025-03-13 14:24:22 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login
+2025-03-13 14:24:22 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-13 14:24:22 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /login
+2025-03-13 14:24:22 [http-nio-8080-exec-1] DEBUG c.e.p.controller.AuthController - Accès à la page de login - Query string: null
+2025-03-13 14:24:22 [http-nio-8080-exec-1] DEBUG c.e.p.controller.AuthController - Vérification du blocage pour l'IP: 0:0:0:0:0:0:0:1
+2025-03-13 14:24:22 [http-nio-8080-exec-1] DEBUG c.e.p.controller.AuthController - IP non bloquée
+2025-03-13 14:24:31 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing POST /login
+2025-03-13 14:24:31 [http-nio-8080-exec-3] DEBUG o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
+2025-03-13 14:24:31 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.s.ChangeSessionIdAuthenticationStrategy - Changed session id from 844CE600027EE55102EFEF79894D3F96
+2025-03-13 14:24:31 [http-nio-8080-exec-3] DEBUG o.s.s.c.session.SessionRegistryImpl - Registering session 431F90BED5F2075CD73C53F2190E9C63, for principal org.springframework.security.core.userdetails.User [Username=hiba@gmail.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]]
+2025-03-13 14:24:31 [http-nio-8080-exec-3] DEBUG o.s.s.w.c.CsrfAuthenticationStrategy - Replaced CSRF Token
+2025-03-13 14:24:31 [http-nio-8080-exec-3] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Stored SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=hiba@gmail.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=844CE600027EE55102EFEF79894D3F96], Granted Authorities=[ROLE_USER]]] to HttpSession [org.apache.catalina.session.StandardSessionFacade@51ca8744]
+2025-03-13 14:24:31 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.UsernamePasswordAuthenticationFilter - Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=hiba@gmail.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=844CE600027EE55102EFEF79894D3F96], Granted Authorities=[ROLE_USER]]
+2025-03-13 14:24:31 [http-nio-8080-exec-3] DEBUG o.s.s.web.DefaultRedirectStrategy - Redirecting to /login-success
+2025-03-13 14:24:31 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /login-success
+2025-03-13 14:24:31 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /login-success
+2025-03-13 14:24:31 [http-nio-8080-exec-4] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=hiba@gmail.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=844CE600027EE55102EFEF79894D3F96], Granted Authorities=[ROLE_USER]]]
+2025-03-13 14:24:31 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /index
+2025-03-13 14:24:31 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /index
+2025-03-13 14:24:31 [http-nio-8080-exec-5] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=hiba@gmail.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=844CE600027EE55102EFEF79894D3F96], Granted Authorities=[ROLE_USER]]]
+2025-03-13 14:24:31 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /favicon.ico
+2025-03-13 14:24:31 [http-nio-8080-exec-6] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=hiba@gmail.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=844CE600027EE55102EFEF79894D3F96], Granted Authorities=[ROLE_USER]]]
+2025-03-13 14:24:31 [http-nio-8080-exec-6] DEBUG o.s.s.w.a.AccessDeniedHandlerImpl - Responding with 403 status code
+2025-03-13 14:24:31 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+2025-03-13 14:24:31 [http-nio-8080-exec-6] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=hiba@gmail.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=844CE600027EE55102EFEF79894D3F96], Granted Authorities=[ROLE_USER]]]
+2025-03-13 14:24:31 [http-nio-8080-exec-6] DEBUG o.s.s.w.a.AccessDeniedHandlerImpl - Responding with 403 status code
+2025-03-13 14:34:56 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-13 14:34:56 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-03-13 14:34:56 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

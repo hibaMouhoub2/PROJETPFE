@@ -11,10 +11,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import jakarta.servlet.http.HttpServletRequest;
 
 import java.security.Principal;
@@ -23,6 +20,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 public class AuthController {
@@ -118,5 +116,46 @@ public class AuthController {
     private String getClientIP(HttpServletRequest request) {
         String xfHeader = request.getHeader("X-Forwarded-For");
         return xfHeader != null ? xfHeader.split(",")[0] : request.getRemoteAddr();
+    }
+    // Supprimer un utilisateur
+    @GetMapping("/delete-user/{id}")
+    public String deleteUser(@PathVariable Long id, RedirectAttributes redirectAttributes) {
+        try {
+            userService.deleteUser(id);
+            redirectAttributes.addFlashAttribute("successMessage", "L'utilisateur a été supprimé avec succès");
+            return "redirect:/users?success=userDeleted";
+        } catch (Exception e) {
+            redirectAttributes.addFlashAttribute("errorMessage", "Erreur lors de la suppression: " + e.getMessage());
+            return "redirect:/users?error=deleteFailed";
+        }
+    }
+
+    @GetMapping("/edit-user/{id}")
+    public String showEditForm(@PathVariable Long id, Model model) {
+        try {
+            UserDto user = userService.findUserById(id);
+            model.addAttribute("user", user);
+            return "edit-user";
+        } catch (Exception e) {
+            return "redirect:/users?error=userNotFound";
+        }
+    }
+
+    @PostMapping("/edit-user/{id}")
+    public String updateUser(@PathVariable Long id,
+                             @Valid @ModelAttribute("user") UserDto userDto,
+                             BindingResult result,
+                             Model model) {
+        if (result.hasErrors()) {
+            return "edit-user";
+        }
+
+        try {
+            userService.updateUser(id, userDto);
+            return "redirect:/users?success=userUpdated";
+        } catch (Exception e) {
+            model.addAttribute("errorMessage", "Erreur lors de la mise à jour: " + e.getMessage());
+            return "edit-user";
+        }
     }
 }

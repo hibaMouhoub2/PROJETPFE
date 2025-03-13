@@ -45,7 +45,9 @@ public class SpringSecurity {
                         authorize.requestMatchers("/register/**").permitAll()
                                 .requestMatchers("/index").permitAll()
                                 .requestMatchers("/users").hasRole("ADMIN")
+                                .requestMatchers("/delete-user/**").hasRole("ADMIN")
                                 .requestMatchers("/login-success").permitAll()
+                                .requestMatchers("/edit-user/**").hasRole("ADMIN")
                                 .requestMatchers("/users-home").permitAll()
                 ).sessionManagement(session -> session
                         .sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED)

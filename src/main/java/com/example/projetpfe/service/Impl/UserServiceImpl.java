@@ -74,12 +74,53 @@ public class UserServiceImpl implements UserService {
         userDto.setEmail(user.getEmail());
         userDto.setCreatedAt(user.getCreatedAt());
         userDto.setEnabled(user.getEnabled());
+        userDto.setId(user.getId());
         return userDto;
     }
 
-    private Role checkRoleExist() {
-        Role role = new Role();
-        role.setName("ROLE_ADMIN");
-        return roleRepository.save(role);
+    //private Role checkRoleExist() {
+      //  Role role = new Role();
+        //role.setName("ROLE_ADMIN");
+        //return roleRepository.save(role);
+    //}
+    @Override
+    public void deleteUser(Long id) {
+        User user = userRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Utilisateur non trouvé avec l'ID: " + id));
+
+        // Vérifier que l'utilisateur n'est pas l'admin par défaut
+        if ("admin@example.com".equals(user.getEmail())) {
+            throw new RuntimeException("Impossible de supprimer l'administrateur par défaut");
+        }
+
+        // Supprimer les associations avec les rôles avant de supprimer l'utilisateur
+        user.getRoles().clear();
+        userRepository.save(user); // Enregistrer les changements
+
+        // Maintenant supprimer l'utilisateur
+        userRepository.delete(user);
+    }
+    @Override
+    public UserDto findUserById(Long id) {
+        User user = userRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Utilisateur non trouvé avec l'ID: " + id));
+        return convertEntityToDto(user);
+    }
+
+    @Override
+    public void updateUser(Long id, UserDto userDto) {
+        User user = userRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Utilisateur non trouvé avec l'ID: " + id));
+
+        user.setName(userDto.getFirstName() + " " + userDto.getLastName());
+        user.setEmail(userDto.getEmail());
+        user.setEnabled(userDto.getEnabled());
+
+        // Ne mettre à jour le mot de passe que s'il est fourni
+        if (userDto.getPassword() != null && !userDto.getPassword().isEmpty()) {
+            user.setPassword(passwordEncoder.encode(userDto.getPassword()));
+        }
+
+        userRepository.save(user);
     }
 }
