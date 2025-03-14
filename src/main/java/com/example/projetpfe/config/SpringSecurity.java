@@ -48,6 +48,8 @@ public class SpringSecurity {
                                 .requestMatchers("/delete-user/**").hasRole("ADMIN")
                                 .requestMatchers("/login-success").permitAll()
                                 .requestMatchers("/edit-user/**").hasRole("ADMIN")
+                                .requestMatchers("/agenda/**").authenticated()
+                                .requestMatchers("/favicon.ico").permitAll()
                                 .requestMatchers("/users-home").permitAll()
                 ).sessionManagement(session -> session
                         .sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED)

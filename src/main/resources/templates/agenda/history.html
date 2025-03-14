@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ATTAWFIQ MICRO-FINANCE</title>
+    <title>Historique - ATTAWFIQ MICRO-FINANCE</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
           rel="stylesheet"
           integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
@@ -68,30 +68,28 @@
             width: 100%;
         }
 
-        .hero-section {
-            background: linear-gradient(135deg, var(--secondary-color) 0%, #333 100%);
-            color: #fff;
-            padding: 5rem 0;
-            margin-top: 1rem;
+        .card {
+            border: none;
             border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        .hero-title {
-            font-weight: 700;
-            color: var(--primary-color);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
             margin-bottom: 1.5rem;
         }
 
-        .hero-subtitle {
-            margin-bottom: 2rem;
-            opacity: 0.9;
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-header {
+            border-radius: 10px 10px 0 0 !important;
+            font-weight: 600;
         }
 
         .btn-primary {
             background-color: var(--primary-color);
             border-color: var(--primary-color);
-            padding: 10px 24px;
+            padding: 8px 20px;
             font-weight: 600;
             transition: all 0.3s;
         }
@@ -101,33 +99,6 @@
             border-color: var(--accent-color);
             transform: translateY(-2px);
             box-shadow: 0 6px 12px rgba(255, 140, 0, 0.2);
-        }
-
-        .feature-card {
-            background-color: #fff;
-            border-radius: 10px;
-            padding: 2rem;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
-            height: 100%;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .feature-icon {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-        }
-
-        .feature-title {
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: var(--secondary-color);
         }
 
         .footer {
@@ -162,6 +133,49 @@
 
         .social-icon:hover {
             color: var(--primary-color);
+        }
+
+        .table th {
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+
+        .table-striped tbody tr:nth-of-type(odd) {
+            background-color: rgba(0, 0, 0, 0.02);
+        }
+
+        .table-hover tbody tr:hover {
+            background-color: rgba(255, 140, 0, 0.05);
+        }
+
+        .page-header {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .page-header h2 {
+            margin-bottom: 0;
+        }
+
+        .filter-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .date-badge {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
         }
     </style>
 </head>
@@ -211,53 +225,80 @@
                         <i class="fas fa-sign-out-alt me-1"></i>Logout
                     </a>
                 </li>
-
-
             </ul>
         </div>
     </div>
 </nav>
 
-<!-- Hero Section -->
+<!-- Main Content -->
 <div class="container mt-4">
-    <div class="hero-section text-center">
-        <div class="container">
-            <h1 class="hero-title display-4">Empowering Communities Through Microfinance</h1>
-            <p class="hero-subtitle lead">Access to financial services that transform lives and build sustainable futures</p>
-            <a href="#" class="btn btn-primary btn-lg">Learn More</a>
+    <div class="page-header">
+        <div class="d-flex justify-content-between align-items-center">
+            <h2><i class="fas fa-history me-2"></i>Historique des clients traités</h2>
         </div>
     </div>
-</div>
 
-<!-- Features Section -->
-<div class="container mt-5">
-    <h2 class="text-center mb-5" style="color: var(--secondary-color);">Our Services</h2>
-    <div class="row">
-        <div class="col-md-4">
-            <div class="feature-card text-center">
-                <div class="feature-icon">
-                    <i class="fas fa-hand-holding-usd"></i>
-                </div>
-                <h4 class="feature-title">Microloans</h4>
-                <p>Small loans designed to support entrepreneurs and small businesses with limited access to traditional banking services.</p>
+    <!-- Filters Section (Optional) -->
+    <div class="filter-card">
+        <form class="row g-3" method="get" th:action="@{/agenda/history}">
+            <div class="col-md-4">
+                <label for="startDate" class="form-label">Date de début</label>
+                <input type="date" class="form-control" id="startDate" name="startDate">
             </div>
-        </div>
-        <div class="col-md-4">
-            <div class="feature-card text-center">
-                <div class="feature-icon">
-                    <i class="fas fa-piggy-bank"></i>
-                </div>
-                <h4 class="feature-title">Savings Programs</h4>
-                <p>Secure savings options to help clients build financial reserves and plan for the future.</p>
+            <div class="col-md-4">
+                <label for="endDate" class="form-label">Date de fin</label>
+                <input type="date" class="form-control" id="endDate" name="endDate">
             </div>
+            <div class="col-md-2 d-flex align-items-end">
+                <button type="submit" class="btn btn-primary w-100"><i class="fas fa-filter me-2"></i>Filtrer</button>
+            </div>
+            <div class="col-md-2 d-flex align-items-end">
+                <a th:href="@{/agenda/history}" class="btn btn-secondary w-100"><i class="fas fa-redo me-2"></i>Réinitialiser</a>
+            </div>
+        </form>
+    </div>
+
+    <!-- History Table -->
+    <div class="card">
+        <div class="card-header bg-success text-white">
+            <i class="fas fa-check-circle me-2"></i>Clients traités
         </div>
-        <div class="col-md-4">
-            <div class="feature-card text-center">
-                <div class="feature-icon">
-                    <i class="fas fa-chalkboard-teacher"></i>
-                </div>
-                <h4 class="feature-title">Financial Education</h4>
-                <p>Training and resources to improve financial literacy and business management skills.</p>
+        <div class="card-body">
+            <div th:if="${#lists.isEmpty(completedTasks)}" class="alert alert-info">
+                <i class="fas fa-info-circle me-2"></i>Aucun client traité dans votre historique.
+            </div>
+
+            <div class="table-responsive" th:unless="${#lists.isEmpty(completedTasks)}">
+                <table class="table table-striped table-hover">
+                    <thead>
+                    <tr>
+                        <th>Client</th>
+                        <th>Téléphone</th>
+                        <th>Date de traitement</th>
+                        <th>Notes</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="task : ${completedTasks}">
+                        <td th:text="${task.clientName}">Nom du client</td>
+                        <td th:text="${task.phoneNumber}">+212 600000000</td>
+                        <td>
+                            <span class="date-badge" th:text="${#temporals.format(task.updatedAt, 'dd/MM/yyyy')}">01/01/2025</span>
+                            <small class="text-muted" th:text="${#temporals.format(task.updatedAt, 'HH:mm')}">10:00</small>
+                        </td>
+                        <td th:text="${#strings.abbreviate(task.notes, 50)}">Note de traitement...</td>
+                        <td>
+                            <a th:href="@{'/agenda/' + ${task.id}}" class="btn btn-sm btn-primary">
+                                <i class="fas fa-eye me-1"></i>Détails
+                            </a>
+                            <a th:href="@{'/agenda/' + ${task.id} + '/update'}" class="btn btn-sm btn-warning">
+                                <i class="fas fa-edit me-1"></i>Modifier
+                            </a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
