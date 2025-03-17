@@ -50,6 +50,7 @@ public class SpringSecurity {
                                 .requestMatchers("/edit-user/**").hasRole("ADMIN")
                                 .requestMatchers("/agenda/**").authenticated()
                                 .requestMatchers("/favicon.ico").permitAll()
+                                .requestMatchers("/admin/**").hasRole("ADMIN")
                                 .requestMatchers("/users-home").permitAll()
                 ).sessionManagement(session -> session
                         .sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED)

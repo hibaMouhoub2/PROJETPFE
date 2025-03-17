@@ -27,4 +27,17 @@ public interface ClientTaskRepository extends JpaRepository<ClientTask, Long> {
 
     // Obtenir les tâches "complétées" pour l'historique
     List<ClientTask> findByAssignedUserAndCompletedTrue(User user);
+
+    // Dans ClientTaskRepository.java
+// Trouver toutes les tâches (pour l'admin)
+    List<ClientTask> findAllByOrderByCreatedAtDesc();
+
+    // Trouver les tâches non assignées
+    List<ClientTask> findByAssignedUserIsNull();
+
+    // Trouver les tâches par utilisateur assigné
+    List<ClientTask> findByAssignedUserOrderByCreatedAtDesc(User user);
+
+    // Trouver les tâches par statut (pour tous les utilisateurs)
+    List<ClientTask> findByStatus(ClientTaskStatus status);
 }

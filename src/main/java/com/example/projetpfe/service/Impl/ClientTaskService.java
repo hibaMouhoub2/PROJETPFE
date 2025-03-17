@@ -166,4 +166,45 @@ public class ClientTaskService {
         // Enregistrer les modifications
         clientTaskRepository.save(existingTask);
     }
+
+    // Dans ClientTaskService.java
+
+    // Récupérer toutes les tâches (pour l'admin)
+    public List<ClientTask> getAllTasks() {
+        return clientTaskRepository.findAllByOrderByCreatedAtDesc();
+    }
+
+    // Récupérer les tâches non assignées
+    public List<ClientTask> getUnassignedTasks() {
+        return clientTaskRepository.findByAssignedUserIsNull();
+    }
+
+    // Filtrer les tâches par utilisateur
+    public List<ClientTask> getTasksByUser(Long userId) {
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new RuntimeException("Utilisateur non trouvé"));
+        return clientTaskRepository.findByAssignedUserOrderByCreatedAtDesc(user);
+    }
+
+    // Récupérer les tâches par statut (tous utilisateurs confondus)
+    public List<ClientTask> getTasksByStatus(ClientTaskStatus status) {
+        return clientTaskRepository.findByStatus(status);
+    }
+
+    // Assigner plusieurs tâches à la fois
+    @Transactional
+    public void assignMultipleTasks(List<Long> taskIds, Long userId, String adminEmail) {
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new RuntimeException("Utilisateur non trouvé"));
+        User admin = userRepository.findByEmail(adminEmail);
+
+        for (Long taskId : taskIds) {
+            ClientTask task = clientTaskRepository.findById(taskId)
+                    .orElseThrow(() -> new RuntimeException("Tâche non trouvée"));
+            task.setAssignedUser(user);
+            task.setUpdatedBy(admin);
+            task.setUpdatedAt(LocalDateTime.now());
+            clientTaskRepository.save(task);
+        }
+    }
 }
