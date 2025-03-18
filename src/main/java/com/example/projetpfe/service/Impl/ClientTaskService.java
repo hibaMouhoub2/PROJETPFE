@@ -1,8 +1,11 @@
 package com.example.projetpfe.service.Impl;
 
+import com.example.projetpfe.dto.ClientTaskDTO;
+import com.example.projetpfe.entity.Client;
 import com.example.projetpfe.entity.ClientTask;
 import com.example.projetpfe.entity.ClientTaskStatus;
 import com.example.projetpfe.entity.User;
+import com.example.projetpfe.repository.ClientRepository;
 import com.example.projetpfe.repository.ClientTaskRepository;
 import com.example.projetpfe.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,25 +16,45 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
+import java.util.stream.Collectors;
 
 @Service
 public class ClientTaskService {
 
     private final ClientTaskRepository clientTaskRepository;
     private final UserRepository userRepository;
+    private final ClientRepository clientRepository; // Ajout de la référence au repository Client
 
     @Autowired
-    public ClientTaskService(ClientTaskRepository clientTaskRepository, UserRepository userRepository) {
+    public ClientTaskService(ClientTaskRepository clientTaskRepository,
+                             UserRepository userRepository,
+                             ClientRepository clientRepository) {
         this.clientTaskRepository = clientTaskRepository;
         this.userRepository = userRepository;
+        this.clientRepository = clientRepository;
     }
 
     // Créer une nouvelle tâche client
     @Transactional
-    public ClientTask createClientTask(ClientTask task, String creatorEmail) {
+    public ClientTask createClientTask(ClientTaskDTO taskDTO, String creatorEmail) {
         User creator = userRepository.findByEmail(creatorEmail);
+        Client client = clientRepository.findById(taskDTO.getClientId())
+                .orElseThrow(() -> new RuntimeException("Client non trouvé avec l'ID: " + taskDTO.getClientId()));
+
+        ClientTask task = new ClientTask();
+        task.setClient(client); // Lier à l'entité Client
+        task.setStatus(taskDTO.getStatus() != null ? taskDTO.getStatus() : ClientTaskStatus.PENDING);
+        task.setNotes(taskDTO.getNotes());
+        task.setScheduledDate(taskDTO.getScheduledDate());
         task.setCreatedBy(creator);
         task.setUpdatedBy(creator);
+
+        if (taskDTO.getAssignedUserId() != null) {
+            User assignedUser = userRepository.findById(taskDTO.getAssignedUserId())
+                    .orElseThrow(() -> new RuntimeException("Utilisateur non trouvé"));
+            task.setAssignedUser(assignedUser);
+        }
+
         return clientTaskRepository.save(task);
     }
 
@@ -87,6 +110,13 @@ public class ClientTaskService {
         // Si marquée comme complétée
         if (newStatus == ClientTaskStatus.COMPLETED) {
             task.setCompleted(true);
+
+            // Également marquer le client comme traité si la tâche est complétée
+            if (task.getClient() != null) {
+                Client client = task.getClient();
+                client.setCompleted(true);
+                clientRepository.save(client);
+            }
         }
 
         task.setUpdatedBy(user);
@@ -143,6 +173,7 @@ public class ClientTaskService {
         return clientTaskRepository.findById(taskId)
                 .orElseThrow(() -> new RuntimeException("Tâche non trouvée"));
     }
+
     public void updateTask(Long taskId, ClientTask updatedTask, String userEmail) {
         // Récupérer la tâche existante
         ClientTask existingTask = getTaskById(taskId);
@@ -151,9 +182,8 @@ public class ClientTaskService {
         User user = userRepository.findByEmail(userEmail);
 
         // Mettre à jour les champs
-        existingTask.setEmail(updatedTask.getEmail());
-        existingTask.setStatus(updatedTask.getStatus());
         existingTask.setNotes(updatedTask.getNotes());
+        existingTask.setStatus(updatedTask.getStatus());
         existingTask.setScheduledDate(updatedTask.getScheduledDate());
         existingTask.setUpdatedBy(user);
         existingTask.setUpdatedAt(LocalDateTime.now());
@@ -161,6 +191,13 @@ public class ClientTaskService {
         // Si la tâche est marquée comme complétée
         if (updatedTask.getStatus() == ClientTaskStatus.COMPLETED) {
             existingTask.setCompleted(true);
+
+            // Marquer également le client comme traité
+            if (existingTask.getClient() != null) {
+                Client client = existingTask.getClient();
+                client.setCompleted(true);
+                clientRepository.save(client);
+            }
         }
 
         // Enregistrer les modifications
@@ -206,5 +243,27 @@ public class ClientTaskService {
             task.setUpdatedAt(LocalDateTime.now());
             clientTaskRepository.save(task);
         }
+    }
+
+    // Obtenir les tâches associées à un client
+    public List<ClientTask> getTasksByClientId(Long clientId) {
+        Client client = clientRepository.findById(clientId)
+                .orElseThrow(() -> new RuntimeException("Client non trouvé"));
+        return clientTaskRepository.findByClient(client);
+    }
+
+    // Convertir ClientTaskDTO en ClientTask
+    public ClientTaskDTO convertToDTO(ClientTask task) {
+        ClientTaskDTO dto = new ClientTaskDTO();
+        dto.setId(task.getId());
+        dto.setClientId(task.getClient() != null ? task.getClient().getId() : null);
+        dto.setClientName(task.getClientName());
+        dto.setPhoneNumber(task.getPhoneNumber());
+        dto.setEmail(task.getEmail());
+        dto.setNotes(task.getNotes());
+        dto.setStatus(task.getStatus());
+        dto.setScheduledDate(task.getScheduledDate());
+        dto.setAssignedUserId(task.getAssignedUser() != null ? task.getAssignedUser().getId() : null);
+        return dto;
     }
 }

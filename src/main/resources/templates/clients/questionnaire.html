@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Questionnaire Client - ATTAWFIQ MICRO-FINANCE</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+        crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #FF8C00;
+      --secondary-color: #222;
+      --accent-color: #FF6B00;
+      --light-color: #f8f9fa;
+      --dark-color: #111;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f5f5;
+      color: var(--secondary-color);
+    }
+
+    .navbar {
+      background-color: var(--secondary-color) !important;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--primary-color) !important;
+    }
+
+    .nav-link {
+      color: #fff !important;
+      font-weight: 500;
+      margin: 0 10px;
+      position: relative;
+      transition: color 0.3s;
+    }
+
+    .nav-link:hover {
+      color: var(--primary-color) !important;
+    }
+
+    .nav-link.active {
+      color: var(--primary-color) !important;
+    }
+
+    .card {
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s, box-shadow 0.3s;
+      margin-bottom: 1.5rem;
+    }
+
+    .card-header {
+      background-color: var(--secondary-color);
+      color: white;
+      font-weight: 600;
+      border-radius: 10px 10px 0 0 !important;
+    }
+
+    .btn-primary {
+      background-color: var(--primary-color);
+      border-color: var(--primary-color);
+      padding: 8px 20px;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--accent-color);
+      border-color: var(--accent-color);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(255, 140, 0, 0.2);
+    }
+
+    .btn-secondary {
+      background-color: #6c757d;
+      border-color: #6c757d;
+      padding: 8px 20px;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+
+    .btn-secondary:hover {
+      background-color: #5a6268;
+      border-color: #5a6268;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(108, 117, 125, 0.2);
+    }
+
+    .form-label {
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-control:focus, .form-select:focus {
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 0.25rem rgba(255, 140, 0, 0.25);
+    }
+
+    .was-validated .form-control:invalid, .form-control.is-invalid {
+      border-color: #dc3545;
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
+    }
+
+    .invalid-feedback {
+      display: block;
+      color: #dc3545;
+      font-size: 0.875em;
+    }
+
+    .questionnaire-section {
+      padding: 1.5rem;
+      border-radius: 8px;
+      background-color: #fff;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .section-title {
+      font-weight: 600;
+      color: var(--secondary-color);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #eee;
+    }
+
+    .form-check-input:checked {
+      background-color: var(--primary-color);
+      border-color: var(--primary-color);
+    }
+
+    /* Progress stepper styles */
+    .stepper-wrapper {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+    }
+
+    .stepper-item {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 1;
+    }
+
+    .stepper-item::before {
+      position: absolute;
+      content: "";
+      border-bottom: 2px solid #ccc;
+      width: 100%;
+      top: 20px;
+      left: -50%;
+      z-index: 1;
+    }
+
+    .stepper-item:first-child::before {
+      display: none;
+    }
+
+    .stepper-item.active::before {
+      border-bottom: 2px solid var(--primary-color);
+    }
+
+    .step-counter {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #ccc;
+      color: #fff;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .active .step-counter {
+      background-color: var(--primary-color);
+    }
+
+    .step-name {
+      font-size: 0.85rem;
+      color: #555;
+      text-align: center;
+    }
+
+    .active .step-name {
+      color: var(--primary-color);
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <i class="fas fa-landmark me-2"></i>ATTAWFIQ MICRO-FINANCE
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/index}">
+            <i class="fas fa-home me-1"></i>Accueil
+          </a>
+        </li>
+        <li class="nav-item" sec:authorize="hasRole('ADMIN')">
+          <a class="nav-link" th:href="@{/users}">
+            <i class="fas fa-users me-1"></i>Utilisateurs
+          </a>
+        </li>
+        <li class="nav-item" sec:authorize="hasRole('USER')">
+          <a class="nav-link" th:href="@{/agenda}">
+            <i class="fas fa-calendar-alt me-1"></i>Mon Agenda
+          </a>
+        </li>
+        <li class="nav-item" sec:authorize="hasRole('USER')">
+          <a class="nav-link" th:href="@{/agenda/history}">
+            <i class="fas fa-history me-1"></i>Historique
+          </a>
+        </li>
+        <li class="nav-item" sec:authorize="hasRole('ADMIN')">
+          <a class="nav-link" th:href="@{/admin/tasks}">
+            <i class="fas fa-tasks me-1"></i>Administration des Tâches
+          </a>
+        </li>
+        <li class="nav-item" sec:authorize="isAuthenticated()">
+          <a class="nav-link active" th:href="@{/clients}">
+            <i class="fas fa-users me-1"></i>Clients
+          </a>
+        </li>
+        <li class="nav-item" sec:authorize="isAuthenticated()">
+          <a class="nav-link" th:href="@{/logout}">
+            <i class="fas fa-sign-out-alt me-1"></i>Déconnexion
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Main Content -->
+<div class="container mt-4">
+  <div class="row mb-3">
+    <div class="col">
+      <a th:href="@{/clients}" class="btn btn-secondary">
+        <i class="fas fa-arrow-left me-2"></i>Retour à la liste des clients
+      </a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <h4 class="mb-0">
+        <i class="fas fa-clipboard-list me-2"></i>
+        <span th:if="${client.id != null}">Mise à jour du questionnaire client</span>
+        <span th:unless="${client.id != null}">Nouveau questionnaire client</span>
+      </h4>
+    </div>
+    <div class="card-body">
+      <!-- Progress steps -->
+      <div class="stepper-wrapper mb-4">
+        <div class="stepper-item active">
+          <div class="step-counter">1</div>
+          <div class="step-name">Informations du client</div>
+        </div>
+        <div class="stepper-item" id="step2">
+          <div class="step-counter">2</div>
+          <div class="step-name">Prise de contact</div>
+        </div>
+        <div class="stepper-item" id="step3">
+          <div class="step-counter">3</div>
+          <div class="step-name">Questionnaire</div>
+        </div>
+        <div class="stepper-item" id="step4">
+          <div class="step-counter">4</div>
+          <div class="step-name">Intérêt et RDV</div>
+        </div>
+      </div>
+
+      <form  th:action="@{${client.id != null ? '/clients/' + client.id + '/edit' : '/clients/create'}}" method="post" th:object="${client}">
+
+        <!-- Section 1: Informations du client -->
+        <div id="section1" class="questionnaire-section">
+          <h5 class="section-title"><i class="fas fa-user me-2"></i>Informations du client</h5>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="nom" class="form-label">Nom <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" id="nom" th:field="*{nom}" required>
+              <div class="invalid-feedback" th:if="${#fields.hasErrors('nom')}" th:errors="*{nom}"></div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="prenom" class="form-label">Prénom <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" id="prenom" th:field="*{prenom}" required>
+              <div class="invalid-feedback" th:if="${#fields.hasErrors('prenom')}" th:errors="*{prenom}"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="telephone" class="form-label">Téléphone <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" id="telephone" th:field="*{telephone}" required>
+              <div class="invalid-feedback" th:if="${#fields.hasErrors('telephone')}" th:errors="*{telephone}"></div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" th:field="*{email}">
+              <div class="invalid-feedback" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
+            </div>
+          </div>
+          <div class="d-flex justify-content-end mt-3">
+            <button type="button" class="btn btn-primary" onclick="nextSection(1)">
+              Suivant <i class="fas fa-arrow-right ms-2"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Section 2: Prise de contact -->
+        <div id="section2" class="questionnaire-section" style="display: none;">
+          <h5 class="section-title"><i class="fas fa-phone-alt me-2"></i>Prise de contact</h5>
+          <div class="mb-3">
+            <label class="form-label">1. Prise de contact</label>
+            <select class="form-select" th:field="*{priseDeContact}">
+              <option value="">-- Sélectionnez une option --</option>
+              <option th:each="option : ${prisesContact}"
+                      th:value="${option}"
+                      th:text="${option.displayName}"></option>
+            </select>
+          </div>
+          <div class="d-flex justify-content-between mt-3">
+            <button type="button" class="btn btn-secondary" onclick="prevSection(2)">
+              <i class="fas fa-arrow-left me-2"></i> Précédent
+            </button>
+            <button type="button" class="btn btn-primary" onclick="nextSection(2)">
+              Suivant <i class="fas fa-arrow-right ms-2"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Section 3: Questionnaire Principal -->
+        <div id="section3" class="questionnaire-section" style="display: none;">
+          <h5 class="section-title"><i class="fas fa-clipboard-check me-2"></i>Questionnaire Principal</h5>
+          <div class="mb-3">
+            <label class="form-label">2. Raison du non-renouvellement du crédit</label>
+            <select class="form-select" th:field="*{raisonNonRenouvellement}">
+              <option value="">-- Sélectionnez une option --</option>
+              <option th:each="option : ${raisonsNonRenouvellement}"
+                      th:value="${option}"
+                      th:text="${option.displayName}"></option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">3. Qualité du service lors de votre dernier crédit</label>
+            <select class="form-select" th:field="*{qualiteService}">
+              <option value="">-- Sélectionnez une option --</option>
+              <option th:each="option : ${qualitesService}"
+                      th:value="${option}"
+                      th:text="${option.displayName}"></option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">7. Rendez-vous pour visiter l'agence</label>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="aDifficultesRencontrees" id="aDifficultesOui" th:field="*{ADifficultesRencontrees}" th:value="${true}" onclick="togglePrecisionDifficultes(true)">
+              <label class="form-check-label" for="aDifficultesOui">Oui</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="aDifficultesRencontrees" id="aDifficultesNon" th:field="*{ADifficultesRencontrees}" th:value="${false}" onclick="togglePrecisionDifficultes(false)">
+              <label class="form-check-label" for="aDifficultesNon">Non</label>
+            </div>
+
+            <div id="precisionDifficultesSection" style="display: none; margin-top: 15px;">
+              <label for="precisionDifficultes" class="form-label">5. Précision des difficultés rencontrées</label>
+              <textarea class="form-control" id="precisionDifficultes" th:field="*{precisionDifficultes}" rows="3"></textarea>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between mt-3">
+            <button type="button" class="btn btn-secondary" onclick="prevSection(3)">
+              <i class="fas fa-arrow-left me-2"></i> Précédent
+            </button>
+            <button type="button" class="btn btn-primary" onclick="nextSection(3)">
+              Suivant <i class="fas fa-arrow-right ms-2"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Section 4: Intérêt et Rendez-vous -->
+        <div id="section4" class="questionnaire-section" style="display: none;">
+          <h5 class="section-title"><i class="fas fa-calendar-check me-2"></i>Intérêt et Rendez-vous</h5>
+
+          <div class="mb-3">
+            <label class="form-label">6. Intérêt pour un nouveau crédit</label>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="interetNouveauCredit" id="interetOui" th:field="*{interetNouveauCredit}" value="OUI">
+              <label class="form-check-label" for="interetOui">Oui</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="interetNouveauCredit" id="interetNon" th:field="*{interetNouveauCredit}" value="NON">
+              <label class="form-check-label" for="interetNon">Non</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="interetNouveauCredit" id="interetPeutEtre" th:field="*{interetNouveauCredit}" value="PEUT_ETRE">
+              <label class="form-check-label" for="interetPeutEtre">Peut-être dans le futur</label>
+            </div>
+          </div>
+          <div class="mb-3" id="rdvSection">
+            <label class="form-label">7. Rendez-vous pour visiter l'agence</label>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="rendezVousAgence" id="rdvOui" th:field="*{rendezVousAgence}" th:value="${true}" onclick="toggleRdvDate(true)">
+              <label class="form-check-label" for="rdvOui">Oui</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="rendezVousAgence" id="rdvNon" th:field="*{rendezVousAgence}" th:value="${false}" onclick="toggleRdvDate(false)">
+              <label class="form-check-label" for="rdvNon">Non</label>
+            </div>
+            <div id="dateHeureSection" class="mt-3" style="display: none;">
+              <label for="dateHeureRendezVous" class="form-label">Date et heure</label>
+              <input type="datetime-local" class="form-control" id="dateHeureRendezVous" th:field="*{dateHeureRendezVous}">
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">8. Facteurs influençant votre décision</label>
+            <select class="form-select" th:field="*{facteurInfluence}">
+              <option value="">-- Sélectionnez une option --</option>
+              <option th:each="option : ${facteursInfluence}"
+                      th:value="${option}"
+                      th:text="${option.displayName}"></option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Si autres facteurs à préciser</label>
+            <textarea class="form-control" th:field="*{autresFacteurs}" rows="3"></textarea>
+          </div>
+          <div class="d-flex justify-content-between mt-3">
+            <button type="button" class="btn btn-secondary" onclick="prevSection(4)">
+              <i class="fas fa-arrow-left me-2"></i> Précédent
+            </button>
+            <button type="submit" class="btn btn-success">
+              <i class="fas fa-save me-2"></i> Enregistrer
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+
+<!-- Script pour la navigation entre les sections -->
+<script>
+  function nextSection(currentStep) {
+    // Cacher la section actuelle
+    document.getElementById('section' + currentStep).style.display = 'none';
+    // Afficher la section suivante
+    document.getElementById('section' + (currentStep + 1)).style.display = 'block';
+
+    // Mettre à jour le stepper
+    document.getElementById('step' + (currentStep + 1)).classList.add('active');
+
+    // Scroller vers le haut
+    window.scrollTo(0, 0);
+  }
+
+  function prevSection(currentStep) {
+    // Cacher la section actuelle
+    document.getElementById('section' + currentStep).style.display = 'none';
+    // Afficher la section précédente
+    document.getElementById('section' + (currentStep - 1)).style.display = 'block';
+
+    // Mettre à jour le stepper
+    document.getElementById('step' + currentStep).classList.remove('active');
+
+    // Scroller vers le haut
+    window.scrollTo(0, 0);
+  }
+
+  function toggleRdvDate(show) {
+    document.getElementById('dateHeureSection').style.display = show ? 'block' : 'none';
+  }
+
+  function togglePrecisionDifficultes(show) {
+    document.getElementById('precisionDifficultesSection').style.display = show ? 'block' : 'none';
+  }
+
+  // Initialiser l'affichage des champs conditionnels
+  document.addEventListener('DOMContentLoaded', function() {
+    // Vérifier l'état de "Difficultés rencontrées"
+    const difficultesOui = document.getElementById('difficultesOui');
+    if (difficultesOui && difficultesOui.checked) {
+      togglePrecisionDifficultes(true);
+    }
+
+    // Vérifier l'état de "Rendez-vous Agence"
+    const rdvOui = document.getElementById('rdvOui');
+    if (rdvOui && rdvOui.checked) {
+      toggleRdvDate(true);
+    }
+  });
+</script>
+</body>
+</html>

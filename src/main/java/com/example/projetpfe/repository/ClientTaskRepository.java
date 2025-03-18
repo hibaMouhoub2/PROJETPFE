@@ -1,5 +1,6 @@
 package com.example.projetpfe.repository;
 
+import com.example.projetpfe.entity.Client;
 import com.example.projetpfe.entity.ClientTask;
 import com.example.projetpfe.entity.ClientTaskStatus;
 import com.example.projetpfe.entity.User;
@@ -28,8 +29,7 @@ public interface ClientTaskRepository extends JpaRepository<ClientTask, Long> {
     // Obtenir les tâches "complétées" pour l'historique
     List<ClientTask> findByAssignedUserAndCompletedTrue(User user);
 
-    // Dans ClientTaskRepository.java
-// Trouver toutes les tâches (pour l'admin)
+    // Trouver toutes les tâches (pour l'admin)
     List<ClientTask> findAllByOrderByCreatedAtDesc();
 
     // Trouver les tâches non assignées
@@ -40,4 +40,13 @@ public interface ClientTaskRepository extends JpaRepository<ClientTask, Long> {
 
     // Trouver les tâches par statut (pour tous les utilisateurs)
     List<ClientTask> findByStatus(ClientTaskStatus status);
+
+    // Trouver les tâches associées à un client
+    List<ClientTask> findByClient(Client client);
+
+    // Trouver les tâches complétées pour un client
+    List<ClientTask> findByClientAndCompletedTrue(Client client);
+
+    // Trouver les tâches en attente pour un client
+    List<ClientTask> findByClientAndCompletedFalse(Client client);
 }

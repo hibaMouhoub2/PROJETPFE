@@ -4,6 +4,7 @@ import com.example.projetpfe.dto.ClientTaskDTO;
 import com.example.projetpfe.entity.ClientTask;
 import com.example.projetpfe.entity.ClientTaskStatus;
 import com.example.projetpfe.entity.User;
+import com.example.projetpfe.service.Impl.ClientService;
 import com.example.projetpfe.service.Impl.ClientTaskService;
 import com.example.projetpfe.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,12 +27,17 @@ public class AdminTaskController {
 
     private final ClientTaskService clientTaskService;
     private final UserService userService;
+    private final ClientService clientService;
 
     @Autowired
-    public AdminTaskController(ClientTaskService clientTaskService, UserService userService) {
+    public AdminTaskController(ClientTaskService clientTaskService,
+                               UserService userService,
+                               ClientService clientService) {
         this.clientTaskService = clientTaskService;
         this.userService = userService;
+        this.clientService = clientService;
     }
+
 
     // Afficher toutes les tâches clients
     @GetMapping
@@ -119,9 +125,11 @@ public class AdminTaskController {
     public String showCreateForm(Model model) {
         model.addAttribute("task", new ClientTaskDTO());
         model.addAttribute("users", userService.findAllUsers());
+        model.addAttribute("clients", clientService.findAllClients());
         return "admin/create-task";
     }
 
+    // Traiter la création d'une tâche
     // Traiter la création d'une tâche
     @PostMapping("/create")
     public String processCreate(@ModelAttribute("task") ClientTaskDTO taskDTO,
@@ -130,21 +138,7 @@ public class AdminTaskController {
             Authentication auth = SecurityContextHolder.getContext().getAuthentication();
             String adminEmail = auth.getName();
 
-            // Convertir DTO en entité
-            ClientTask task = new ClientTask();
-            task.setClientName(taskDTO.getClientName());
-            task.setPhoneNumber(taskDTO.getPhoneNumber());
-            task.setEmail(taskDTO.getEmail());
-            task.setNotes(taskDTO.getNotes());
-            task.setStatus(taskDTO.getStatus() != null ? taskDTO.getStatus() : ClientTaskStatus.PENDING);
-            task.setScheduledDate(taskDTO.getScheduledDate());
-
-            if (taskDTO.getAssignedUserId() != null) {
-                User assignedUser = userService.findUserEntityById(taskDTO.getAssignedUserId());
-                task.setAssignedUser(assignedUser);
-            }
-
-            clientTaskService.createClientTask(task, adminEmail);
+            clientTaskService.createClientTask(taskDTO, adminEmail);
             redirectAttributes.addFlashAttribute("success", "La tâche a été créée avec succès");
             return "redirect:/admin/tasks";
         } catch (Exception e) {

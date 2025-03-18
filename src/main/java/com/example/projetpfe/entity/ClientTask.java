@@ -20,11 +20,10 @@ public class ClientTask {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // Informations temporaires du client (en attendant l'entité Client)
-    private String tempClientId;
-    private String clientName;
-    private String phoneNumber;
-    private String email;
+    // Relation avec l'entité Client
+    @ManyToOne
+    @JoinColumn(name = "client_id")
+    private Client client;
 
     // État de la tâche
     @Enumerated(EnumType.STRING)
@@ -73,5 +72,18 @@ public class ClientTask {
     @PreUpdate
     protected void onUpdate() {
         updatedAt = LocalDateTime.now();
+    }
+
+    // Getters pour les informations client (pour la compatibilité avec le code existant)
+    public String getClientName() {
+        return client != null ? client.getPrenom() + " " + client.getNom() : null;
+    }
+
+    public String getPhoneNumber() {
+        return client != null ? client.getTelephone() : null;
+    }
+
+    public String getEmail() {
+        return client != null ? client.getEmail() : null;
     }
 }

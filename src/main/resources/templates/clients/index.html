@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Clients - ATTAWFIQ MICRO-FINANCE</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #FF8C00;
+            --secondary-color: #222;
+            --accent-color: #FF6B00;
+            --light-color: #f8f9fa;
+            --dark-color: #111;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            color: var(--secondary-color);
+        }
+
+        .navbar {
+            background-color: var(--secondary-color) !important;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-color) !important;
+        }
+
+        .nav-link {
+            color: #fff !important;
+            font-weight: 500;
+            margin: 0 10px;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color) !important;
+        }
+
+        .nav-link.active {
+            color: var(--primary-color) !important;
+        }
+
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 8px 20px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(255, 140, 0, 0.2);
+        }
+
+        .table th {
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+
+        .table-striped tbody tr:nth-of-type(odd) {
+            background-color: rgba(0, 0, 0, 0.02);
+        }
+
+        .table-hover tbody tr:hover {
+            background-color: rgba(255, 140, 0, 0.05);
+        }
+
+        .badge {
+            padding: 6px 10px;
+            font-weight: 500;
+        }
+
+        .badge-completed {
+            background-color: #28a745;
+        }
+
+        .badge-pending {
+            background-color: var(--primary-color);
+        }
+
+        .page-header {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-box {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .search-box input {
+            padding-left: 35px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            height: 45px;
+        }
+
+        .search-box i {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+        }
+
+        .search-box input:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.25rem rgba(255, 140, 0, 0.25);
+        }
+
+        .filters {
+            background-color: white;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .filter-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+    </style>
+</head>
+<body>
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <i class="fas fa-landmark me-2"></i>ATTAWFIQ MICRO-FINANCE
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/index}">
+                        <i class="fas fa-home me-1"></i>Accueil
+                    </a>
+                </li>
+                <li class="nav-item" sec:authorize="hasRole('ADMIN')">
+                    <a class="nav-link" th:href="@{/users}">
+                        <i class="fas fa-users me-1"></i>Utilisateurs
+                    </a>
+                </li>
+                <li class="nav-item" sec:authorize="hasRole('USER')">
+                    <a class="nav-link" th:href="@{/agenda}">
+                        <i class="fas fa-calendar-alt me-1"></i>Mon Agenda
+                    </a>
+                </li>
+                <li class="nav-item" sec:authorize="hasRole('USER')">
+                    <a class="nav-link" th:href="@{/agenda/history}">
+                        <i class="fas fa-history me-1"></i>Historique
+                    </a>
+                </li>
+                <li class="nav-item" sec:authorize="hasRole('ADMIN')">
+                    <a class="nav-link" th:href="@{/admin/tasks}">
+                        <i class="fas fa-tasks me-1"></i>Administration des Tâches
+                    </a>
+                </li>
+                <li class="nav-item" sec:authorize="isAuthenticated()">
+                    <a class="nav-link active" th:href="@{/clients}">
+                        <i class="fas fa-users me-1"></i>Clients
+                    </a>
+                </li>
+                <li class="nav-item" sec:authorize="isAuthenticated()">
+                    <a class="nav-link" th:href="@{/logout}">
+                        <i class="fas fa-sign-out-alt me-1"></i>Déconnexion
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Main Content -->
+<div class="container mt-4">
+    <div class="page-header">
+        <div class="d-flex justify-content-between align-items-center">
+            <h2><i class="fas fa-users me-2"></i>Gestion des Clients</h2>
+            <div>
+                <a th:href="@{/clients/create}" class="btn btn-primary me-2">
+                    <i class="fas fa-plus me-1"></i>Nouveau Client
+                </a>
+                <a th:href="@{/clients/pending}" class="btn btn-warning">
+                    <i class="fas fa-clipboard-list me-1"></i>Clients à traiter
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Alertes -->
+    <div th:if="${success}" class="alert alert-success">
+        <i class="fas fa-check-circle me-2"></i>
+        <span th:text="${success}"></span>
+    </div>
+    <div th:if="${error}" class="alert alert-danger">
+        <i class="fas fa-exclamation-circle me-2"></i>
+        <span th:text="${error}"></span>
+    </div>
+
+    <!-- Filtres Section -->
+    <div class="filters">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" class="form-control" placeholder="Rechercher un client...">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <select class="form-select" id="statusFilter">
+                        <option value="all">Tous les statuts</option>
+                        <option value="completed">Traités</option>
+                        <option value="pending">Non traités</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tableau des clients -->
+    <div class="card">
+        <div class="card-body">
+            <div th:if="${#lists.isEmpty(clients)}" class="alert alert-info">
+                <i class="fas fa-info-circle me-2"></i>Aucun client trouvé.
+            </div>
+
+            <div class="table-responsive" th:unless="${#lists.isEmpty(clients)}">
+                <table class="table table-striped table-hover">
+                    <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Téléphone</th>
+                        <th>Email</th>
+                        <th>Prise de contact</th>
+                        <th>Créé le</th>
+                        <th>Statut</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <!-- Partie à corriger dans le tableau -->
+                    <tbody>
+                    <tr th:each="client : ${clients}" th:class="${client.completed ? '' : 'table-warning'}">
+                        <td th:text="${client.nom}">Nom</td>
+                        <td th:text="${client.prenom}">Prénom</td>
+                        <td th:text="${client.telephone}">+212 600000000</td>
+                        <td th:text="${client.email ?: '-'}">email@example.com</td>
+                        <td th:text="${client.priseDeContact != null ? client.priseDeContact.displayName : '-'}">Contacté</td>
+                        <td th:text="${#temporals.format(client.createdAt, 'dd/MM/yyyy HH:mm')}">01/01/2023</td>
+                        <td>
+                            <span th:if="${client.completed}" class="badge bg-success">Traité</span>
+                            <span th:unless="${client.completed}" class="badge bg-warning">En attente</span>
+                        </td>
+                        <td>
+                            <div class="btn-group">
+                                <a th:href="@{/clients/{id}(id=${client.id})}" class="btn btn-sm btn-primary me-1">
+                                    <i class="fas fa-eye me-1"></i>Détails
+                                </a>
+                                <a th:href="@{/clients/{id}/edit(id=${client.id})}" class="btn btn-sm btn-warning me-1">
+                                    <i class="fas fa-edit me-1"></i>Modifier
+                                </a>
+                                <form th:if="${!client.completed}" th:action="@{/clients/{id}/complete(id=${client.id})}" method="post" style="display:inline;">
+                                    <button type="submit" class="btn btn-sm btn-success">
+                                        <i class="fas fa-check-circle me-1"></i>Marquer traité
+                                    </button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+
+<!-- Script pour la recherche et le filtrage -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const searchInput = document.getElementById('searchInput');
+        const statusFilter = document.getElementById('statusFilter');
+        const tableRows = document.querySelectorAll('tbody tr');
+
+        // Fonction pour filtrer les lignes
+        function filterRows() {
+            const searchTerm = searchInput.value.toLowerCase();
+            const statusValue = statusFilter.value;
+
+            tableRows.forEach(row => {
+                const rowData = row.textContent.toLowerCase();
+                const isCompleted = row.querySelector('.badge').textContent === 'Traité';
+
+                // Vérifier le terme de recherche
+                const matchesSearch = rowData.includes(searchTerm);
+
+                // Vérifier le filtre de statut
+                let matchesStatus = true;
+                if (statusValue === 'completed') {
+                    matchesStatus = isCompleted;
+                } else if (statusValue === 'pending') {
+                    matchesStatus = !isCompleted;
+                }
+
+                // Afficher ou masquer la ligne
+                if (matchesSearch && matchesStatus) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+
+        // Ajouter les écouteurs d'événements
+        searchInput.addEventListener('keyup', filterRows);
+        statusFilter.addEventListener('change', filterRows);
+    });
+</script>
+</body>
+</html>

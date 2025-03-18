@@ -19,12 +19,14 @@ public class ClientTaskDTO {
 
     private Long id;
 
-    @NotEmpty(message = "Le nom du client est requis")
+    // Référence à l'ID du client au lieu des informations directes
+    @NotNull(message = "Le client est requis")
+    private Long clientId;
+
+    // Ces champs sont conservés pour compatibilité avec la vue,
+    // mais ne seront pas utilisés pour la persistance
     private String clientName;
-
-    @NotEmpty(message = "Le numéro de téléphone est requis")
     private String phoneNumber;
-
     private String email;
 
     private String notes;

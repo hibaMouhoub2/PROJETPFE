@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Détail Client - ATTAWFIQ MICRO-FINANCE</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+        crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #FF8C00;
+      --secondary-color: #222;
+      --accent-color: #FF6B00;
+      --light-color: #f8f9fa;
+      --dark-color: #111;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f5f5;
+      color: var(--secondary-color);
+    }
+
+    .navbar {
+      background-color: var(--secondary-color) !important;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--primary-color) !important;
+    }
+
+    .nav-link {
+      color: #fff !important;
+      font-weight: 500;
+      margin: 0 10px;
+      position: relative;
+      transition: color 0.3s;
+    }
+
+    .nav-link:hover {
+      color: var(--primary-color) !important;
+    }
+
+    .nav-link.active {
+      color: var(--primary-color) !important;
+    }
+
+    .card {
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s, box-shadow 0.3s;
+      margin-bottom: 1.5rem;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-header {
+      border-radius: 10px 10px 0 0 !important;
+      font-weight: 600;
+      background-color: var(--secondary-color);
+      color: white;
+    }
+
+    .btn-primary {
+      background-color: var(--primary-color);
+      border-color: var(--primary-color);
+      padding: 8px 20px;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--accent-color);
+      border-color: var(--accent-color);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(255, 140, 0, 0.2);
+    }
+
+    .btn-warning {
+      background-color: #FFC107;
+      border-color: #FFC107;
+      padding: 8px 20px;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+
+    .btn-warning:hover {
+      background-color: #FFB100;
+      border-color: #FFB100;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(255, 193, 7, 0.2);
+    }
+
+    .btn-secondary {
+      background-color: #6c757d;
+      border-color: #6c757d;
+      padding: 8px 20px;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+
+    .btn-secondary:hover {
+      background-color: #5a6268;
+      border-color: #5a6268;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(108, 117, 125, 0.2);
+    }
+
+    .badge {
+      padding: 6px 10px;
+      font-weight: 500;
+    }
+
+    .badge-success {
+      background-color: #28a745;
+    }
+
+    .badge-warning {
+      background-color: #FFC107;
+    }
+
+    .section-title {
+      font-weight: 600;
+      color: var(--secondary-color);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #eee;
+    }
+
+    .client-info-block {
+      background-color: #f8f9fa;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-left: 4px solid var(--primary-color);
+    }
+
+    .info-label {
+      font-weight: 600;
+      color: #555;
+      margin-bottom: 5px;
+    }
+
+    .info-value {
+      margin-bottom: 15px;
+    }
+
+    .card-footer {
+      border-radius: 0 0 10px 10px;
+      background-color: #f8f9fa;
+    }
+
+    .response-highlight {
+      background-color: rgba(255, 140, 0, 0.1);
+      border-radius: 5px;
+      padding: 2px 6px;
+      font-weight: 500;
+    }
+
+    .print-section {
+      padding: 20px;
+      border: 1px dashed #ccc;
+      margin-top: 20px;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+
+    @media print {
+      .no-print {
+        display: none !important;
+      }
+
+      body {
+        background-color: #fff;
+      }
+
+      .card {
+        box-shadow: none;
+        border: 1px solid #ddd;
+      }
+
+      .client-info-block {
+        border-left: 2px solid #333;
+      }
+    }
+  </style>
+</head>
+<body>
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark no-print">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <i class="fas fa-landmark me-2"></i>ATTAWFIQ MICRO-FINANCE
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/index}">
+            <i class="fas fa-home me-1"></i>Accueil
+          </a>
+        </li>
+        <li class="nav-item" sec:authorize="hasRole('ADMIN')">
+          <a class="nav-link" th:href="@{/users}">
+            <i class="fas fa-users me-1"></i>Utilisateurs
+          </a>
+        </li>
+        <li class="nav-item" sec:authorize="hasRole('USER')">
+          <a class="nav-link" th:href="@{/agenda}">
+            <i class="fas fa-calendar-alt me-1"></i>Mon Agenda
+          </a>
+        </li>
+        <li class="nav-item" sec:authorize="hasRole('USER')">
+          <a class="nav-link" th:href="@{/agenda/history}">
+            <i class="fas fa-history me-1"></i>Historique
+          </a>
+        </li>
+        <li class="nav-item" sec:authorize="hasRole('ADMIN')">
+          <a class="nav-link" th:href="@{/admin/tasks}">
+            <i class="fas fa-tasks me-1"></i>Administration des Tâches
+          </a>
+        </li>
+        <li class="nav-item" sec:authorize="isAuthenticated()">
+          <a class="nav-link active" th:href="@{/clients}">
+            <i class="fas fa-users me-1"></i>Clients
+          </a>
+        </li>
+        <li class="nav-item" sec:authorize="isAuthenticated()">
+          <a class="nav-link" th:href="@{/logout}">
+            <i class="fas fa-sign-out-alt me-1"></i>Déconnexion
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Main Content -->
+<div class="container mt-4">
+  <div class="row mb-3 no-print">
+    <div class="col">
+      <a th:href="@{/clients}" class="btn btn-secondary">
+        <i class="fas fa-arrow-left me-2"></i>Retour à la liste des clients
+      </a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header d-flex justify-content-between align-items-center">
+      <h4 class="mb-0">
+        <i class="fas fa-user me-2"></i>
+        <span th:text="${client.prenom + ' ' + client.nom}">Nom du client</span>
+        <span th:if="${client.completed}" class="badge bg-success ms-2">Traité</span>
+        <span th:unless="${client.completed}" class="badge bg-warning ms-2">En attente</span>
+      </h4>
+      <div class="no-print">
+        <button class="btn btn-light" onclick="window.print()">
+          <i class="fas fa-print me-1"></i>Imprimer
+        </button>
+      </div>
+    </div>
+    <div class="card-body">
+      <!-- Informations du client -->
+      <h5 class="section-title">Informations personnelles</h5>
+      <div class="client-info-block">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="info-label">Nom complet:</div>
+            <div class="info-value" th:text="${client.prenom + ' ' + client.nom}">John Doe</div>
+
+            <div class="info-label">Téléphone:</div>
+            <div class="info-value" th:text="${client.telephone}">+212 600000000</div>
+          </div>
+          <div class="col-md-6">
+            <div class="info-label">Email:</div>
+            <div class="info-value" th:text="${client.email ?: 'Non renseigné'}">email@example.com</div>
+
+            <div class="info-label">Date de création:</div>
+            <div class="info-value" th:text="${#temporals.format(client.createdAt, 'dd/MM/yyyy HH:mm')}">01/01/2023 10:00</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Résumé du questionnaire -->
+      <h5 class="section-title">Résumé du questionnaire</h5>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="info-label">1. Prise de contact:</div>
+          <div class="info-value">
+            <span class="response-highlight" th:text="${client.priseDeContact != null ? client.priseDeContact.displayName : 'Non renseigné'}">Contacté</span>
+          </div>
+
+          <div class="info-label">2. Raison du non-renouvellement du crédit:</div>
+          <div class="info-value">
+            <span class="response-highlight" th:text="${client.raisonNonRenouvellement != null ? client.raisonNonRenouvellement.displayName : 'Non renseigné'}">Taux d'intérêt élevé</span>
+          </div>
+
+          <div class="info-label">3. Qualité du service lors du dernier crédit:</div>
+          <div class="info-value">
+            <span class="response-highlight" th:text="${client.qualiteService != null ? client.qualiteService.displayName : 'Non renseigné'}">Excellente</span>
+          </div>
+
+          <div class="info-label">4. Difficultés rencontrées:</div>
+          <div class="info-value" th:text="${client.difficultesRencontrees ?: 'Aucune difficulté renseignée'}">Difficultés mentionnées</div>
+
+          <div class="info-label">5. Précision des difficultés:</div>
+          <div class="info-value" th:text="${client.precisionDifficultes ?: 'Aucune précision renseignée'}">Précisions sur les difficultés</div>
+        </div>
+        <div class="col-md-6">
+          <div class="info-label">6. Intérêt pour un nouveau crédit:</div>
+          <div class="info-value">
+            <span class="response-highlight" th:if="${client.interetNouveauCredit == true}">Oui</span>
+            <span class="response-highlight" th:if="${client.interetNouveauCredit == false}">Non</span>
+            <span class="response-highlight" th:if="${client.interetNouveauCredit == null}">Peut-être dans le futur</span>
+          </div>
+
+          <div class="info-label">7. Rendez-vous pour visiter l'agence:</div>
+          <div class="info-value">
+            <span class="response-highlight" th:if="${client.rendezVousAgence == true}">Oui</span>
+            <span class="response-highlight" th:if="${client.rendezVousAgence == false}">Non</span>
+            <span class="response-highlight" th:if="${client.rendezVousAgence == null}">Non renseigné</span>
+
+            <div th:if="${client.rendezVousAgence == true && client.dateHeureRendezVous != null}">
+              <strong>Date et heure:</strong> <span th:text="${#temporals.format(client.dateHeureRendezVous, 'dd/MM/yyyy HH:mm')}">01/01/2023 14:00</span>
+            </div>
+          </div>
+
+          <div class="info-label">8. Facteurs influençant la décision:</div>
+          <div class="info-value">
+            <span class="response-highlight" th:text="${client.facteurInfluence != null ? client.facteurInfluence.displayName : 'Non renseigné'}">Taux d'intérêt</span>
+          </div>
+
+          <div class="info-label">Autres facteurs:</div>
+          <div class="info-value" th:text="${client.autresFacteurs ?: 'Aucun autre facteur renseigné'}">Autres facteurs mentionnés</div>
+        </div>
+      </div>
+
+      <!-- Information de traitement -->
+      <h5 class="section-title">Informations de traitement</h5>
+      <div class="client-info-block">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="info-label">Créé par:</div>
+            <div class="info-value" th:text="${client.createdBy != null ? client.createdBy.name : 'Système'}">Admin</div>
+
+            <div class="info-label">Date de création:</div>
+            <div class="info-value" th:text="${#temporals.format(client.createdAt, 'dd/MM/yyyy HH:mm')}">01/01/2023 10:00</div>
+          </div>
+          <div class="col-md-6">
+            <div class="info-label">Mis à jour par:</div>
+            <div class="info-value" th:text="${client.updatedBy != null ? client.updatedBy.name : 'Non modifié'}">Agent</div>
+
+            <div class="info-label">Date de mise à jour:</div>
+            <div class="info-value" th:text="${client.updatedAt != null ? #temporals.format(client.updatedAt, 'dd/MM/yyyy HH:mm') : 'Non applicable'}">01/01/2023 11:30</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer no-print">
+      <div class="d-flex justify-content-between">
+        <a th:href="@{/clients/{id}/edit(id=${client.id})}" class="btn btn-warning">
+          <i class="fas fa-edit me-1"></i>Modifier
+        </a>
+        <form th:if="${!client.completed}" th:action="@{/clients/{id}/complete(id=${client.id})}" method="post" style="display:inline;">
+          <button type="submit" class="btn btn-success">
+            <i class="fas fa-check-circle me-1"></i>Marquer comme traité
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Version imprimable -->
+  <div class="print-section d-none d-print-block">
+    <div class="text-center mb-4">
+      <h3>ATTAWFIQ MICRO-FINANCE</h3>
+      <p>Rapport de questionnaire client</p>
+    </div>
+    <p><strong>Date du rapport:</strong> <span th:text="${#temporals.format(#temporals.createNow(), 'dd/MM/yyyy')}">01/01/2023</span></p>
+  </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+</body>
+</html>
