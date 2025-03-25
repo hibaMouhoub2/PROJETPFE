@@ -1,10 +1,7 @@
 package com.example.projetpfe.service.Impl;
 
 import com.example.projetpfe.dto.ClientQuestionnaireDTO;
-import com.example.projetpfe.entity.Client;
-import com.example.projetpfe.entity.ClientTask;
-import com.example.projetpfe.entity.ClientTaskStatus;
-import com.example.projetpfe.entity.User;
+import com.example.projetpfe.entity.*;
 import com.example.projetpfe.repository.ClientRepository;
 import com.example.projetpfe.repository.ClientTaskRepository;
 import com.example.projetpfe.repository.UserRepository;
@@ -96,6 +93,7 @@ public class ClientService {
         updateClientFromDTO(client, dto);
         return client;
     }
+    // Ajouter cette méthode dans ClientService
 
     // Mise à jour de l'entité à partir du DTO
     private void updateClientFromDTO(Client client, ClientQuestionnaireDTO dto) {
@@ -103,7 +101,6 @@ public class ClientService {
         client.setPrenom(dto.getPrenom());
         client.setTelephone(dto.getTelephone());
         client.setEmail(dto.getEmail());
-        client.setPriseDeContact(dto.getPriseDeContact());
         client.setRaisonNonRenouvellement(dto.getRaisonNonRenouvellement());
         client.setQualiteService(dto.getQualiteService());
         client.setADifficultesRencontrees(dto.getADifficultesRencontrees());
@@ -129,7 +126,6 @@ public class ClientService {
         dto.setPrenom(client.getPrenom());
         dto.setTelephone(client.getTelephone());
         dto.setEmail(client.getEmail());
-        dto.setPriseDeContact(client.getPriseDeContact());
         dto.setRaisonNonRenouvellement(client.getRaisonNonRenouvellement());
         dto.setQualiteService(client.getQualiteService());
         dto.setADifficultesRencontrees(client.getADifficultesRencontrees());
@@ -195,5 +191,36 @@ public class ClientService {
         task.setCompleted(false);
 
         clientTaskRepository.save(task);
+    }
+
+
+    // Version qui retourne des DTOs
+    public List<ClientQuestionnaireDTO> findClientDtosByStatus(ClientStatus status) {
+        return clientRepository.findByStatus(status).stream()
+                .map(this::convertEntityToDto)
+                .collect(Collectors.toList());
+    }
+
+    // Version qui retourne des entités
+    public List<Client> findClientsByStatus(ClientStatus status) {
+        return clientRepository.findByStatus(status);
+    }
+
+    // Ajouter méthode pour mettre à jour le statut
+    @Transactional
+    public Client updateClientStatus(Long id, ClientStatus newStatus, String userEmail) {
+        Client client = getClientById(id);
+        User user = userRepository.findByEmail(userEmail);
+
+        client.setStatus(newStatus);
+        client.setUpdatedBy(user);
+        client.setUpdatedAt(LocalDateTime.now());
+
+        // Si statut contacté, marquer comme complété
+        if (newStatus == ClientStatus.CONTACTE) {
+            client.setCompleted(true);
+        }
+
+        return clientRepository.save(client);
     }
 }

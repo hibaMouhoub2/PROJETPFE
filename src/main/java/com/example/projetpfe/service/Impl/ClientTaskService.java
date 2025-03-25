@@ -33,6 +33,12 @@ public class ClientTaskService {
         this.userRepository = userRepository;
         this.clientRepository = clientRepository;
     }
+    // Ajouter cette méthode dans ClientTaskService
+    public List<ClientTask> getUserCallbackTasks(String userEmail) {
+        User user = userRepository.findByEmail(userEmail);
+        // Cette méthode retourne les tâches de type rappel pour les clients avec statut ABSENT
+        return clientTaskRepository.findByAssignedUserAndStatus(user, ClientTaskStatus.TO_CALLBACK);
+    }
 
     // Créer une nouvelle tâche client
     @Transactional

@@ -27,15 +27,15 @@ public class Client {
     private String telephone;
     private String email;
 
-    // Champs correspondant au questionnaire
-    @Enumerated(EnumType.STRING)
-    private PriseContact priseDeContact;
 
     @Enumerated(EnumType.STRING)
     private RaisonNonRenouvellement raisonNonRenouvellement;
 
     @Enumerated(EnumType.STRING)
     private QualiteService qualiteService;
+
+    @Enumerated(EnumType.STRING)
+    private ClientStatus status = ClientStatus.NON_TRAITE;
 
     // Changé en booléen pour la question difficultés
     private Boolean aDifficultesRencontrees;

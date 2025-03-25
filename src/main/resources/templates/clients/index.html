@@ -266,7 +266,7 @@
                         <th>Prénom</th>
                         <th>Téléphone</th>
                         <th>Email</th>
-                        <th>Prise de contact</th>
+                        <th>Statut</th>
                         <th>Créé le</th>
                         <th>Statut</th>
                         <th>Actions</th>
@@ -279,7 +279,15 @@
                         <td th:text="${client.prenom}">Prénom</td>
                         <td th:text="${client.telephone}">+212 600000000</td>
                         <td th:text="${client.email ?: '-'}">email@example.com</td>
-                        <td th:text="${client.priseDeContact != null ? client.priseDeContact.displayName : '-'}">Contacté</td>
+                        <td>
+                          <span class="badge"
+                                th:classappend="${client.status == T(com.example.projetpfe.entity.ClientStatus).NON_TRAITE ? 'bg-warning' :
+                                                 client.status == T(com.example.projetpfe.entity.ClientStatus).CONTACTE ? 'bg-success' :
+                                                 client.status == T(com.example.projetpfe.entity.ClientStatus).ABSENT ? 'bg-info' : 'bg-danger'}"
+                                th:text="${client.status.displayName}">
+                            Status
+                          </span>
+                        </td>
                         <td th:text="${#temporals.format(client.createdAt, 'dd/MM/yyyy HH:mm')}">01/01/2023</td>
                         <td>
                             <span th:if="${client.completed}" class="badge bg-success">Traité</span>

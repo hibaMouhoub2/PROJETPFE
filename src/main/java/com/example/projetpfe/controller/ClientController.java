@@ -37,9 +37,34 @@ public class ClientController {
     // Afficher la liste des clients non traités
     @GetMapping("/pending")
     public String listPendingClients(Model model) {
-        List<ClientQuestionnaireDTO> clients = clientService.findUncompletedClients();
+        List<ClientQuestionnaireDTO> clients = clientService.findClientDtosByStatus(ClientStatus.NON_TRAITE);
         model.addAttribute("clients", clients);
         return "clients/pending";
+    }
+
+    // Ajouter un endpoint pour mettre à jour le statut du client
+    @PostMapping("/{id}/status")
+    public String updateClientStatus(@PathVariable Long id,
+                                     @RequestParam ClientStatus status,
+                                     RedirectAttributes redirectAttributes) {
+        try {
+            Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+            String userEmail = auth.getName();
+
+            clientService.updateClientStatus(id, status, userEmail);
+
+            // Si le statut n'est pas CONTACTE, rediriger vers la liste
+            if (status != ClientStatus.CONTACTE) {
+                redirectAttributes.addFlashAttribute("success", "Statut du client mis à jour");
+                return "redirect:/clients";
+            }
+
+            // Sinon, rediriger vers le formulaire de questionnaire
+            return "redirect:/clients/" + id + "/edit";
+        } catch (Exception e) {
+            redirectAttributes.addFlashAttribute("error", "Erreur: " + e.getMessage());
+            return "redirect:/clients/" + id;
+        }
     }
 
     // Formulaire pour créer un nouveau client
@@ -139,7 +164,6 @@ public class ClientController {
 
     // Helper method pour ajouter les enums au modèle
     private void addEnumAttributesToModel(Model model) {
-        model.addAttribute("prisesContact", PriseContact.values());
         model.addAttribute("raisonsNonRenouvellement", RaisonNonRenouvellement.values());
         model.addAttribute("qualitesService", QualiteService.values());
         model.addAttribute("facteursInfluence", FacteurInfluence.values());

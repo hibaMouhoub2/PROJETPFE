@@ -1,10 +1,6 @@
 package com.example.projetpfe.dto;
 
-import com.example.projetpfe.entity.FacteurInfluence;
-import com.example.projetpfe.entity.InteretCredit;
-import com.example.projetpfe.entity.PriseContact;
-import com.example.projetpfe.entity.QualiteService;
-import com.example.projetpfe.entity.RaisonNonRenouvellement;
+import com.example.projetpfe.entity.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -35,8 +31,6 @@ public class ClientQuestionnaireDTO {
 
     private String email;
 
-    private PriseContact priseDeContact;
-
     private RaisonNonRenouvellement raisonNonRenouvellement;
 
     private QualiteService qualiteService;
@@ -50,6 +44,8 @@ public class ClientQuestionnaireDTO {
     private InteretCredit interetNouveauCredit;
 
     private Boolean rendezVousAgence;
+
+    private ClientStatus status ;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
     private LocalDateTime dateHeureRendezVous;

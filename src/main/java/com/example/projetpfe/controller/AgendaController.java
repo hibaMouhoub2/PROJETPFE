@@ -1,8 +1,12 @@
 package com.example.projetpfe.controller;
 
 import com.example.projetpfe.dto.ClientTaskDTO;
+import com.example.projetpfe.entity.Client;
+import com.example.projetpfe.entity.ClientStatus;
 import com.example.projetpfe.entity.ClientTask;
 import com.example.projetpfe.entity.ClientTaskStatus;
+import com.example.projetpfe.repository.ClientRepository;
+import com.example.projetpfe.service.Impl.ClientService;
 import com.example.projetpfe.service.Impl.ClientTaskService;
 import com.example.projetpfe.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +18,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -23,11 +28,15 @@ public class AgendaController {
 
     private final ClientTaskService clientTaskService;
     private final UserService userService;
+    private final ClientService clientService;
+    private final ClientRepository clientRepository;
 
     @Autowired
-    public AgendaController(ClientTaskService clientTaskService, UserService userService) {
+    public AgendaController(ClientTaskService clientTaskService, UserService userService, ClientService clientService, ClientRepository clientRepository) {
         this.clientTaskService = clientTaskService;
         this.userService = userService;
+        this.clientService = clientService;
+        this.clientRepository = clientRepository;
     }
 
     // Afficher l'agenda de l'utilisateur connecté
@@ -36,14 +45,23 @@ public class AgendaController {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         String userEmail = auth.getName();
 
-        // Récupérer les tâches pour l'agenda
-        Map<String, List<ClientTask>> agenda = clientTaskService.getUserAgenda(userEmail);
+        // Récupérer les clients par statut
+        Map<String, List<Client>> clients = new HashMap<>();
+        clients.put("nonTraites", clientService.findClientsByStatus(ClientStatus.NON_TRAITE));
+        clients.put("absents", clientService.findClientsByStatus(ClientStatus.ABSENT));
 
-        // Récupérer les statistiques
-        Map<String, Long> stats = clientTaskService.getUserStats(userEmail);
+        // Récupérer aussi les tâches de rappel pour les absents (peut-être pas implémenté encore)
+        List<ClientTask> callbackTasks = clientTaskService.getUserCallbackTasks(userEmail);
 
-        model.addAttribute("pendingTasks", agenda.get("pending"));
-        model.addAttribute("callbackTasks", agenda.get("callback"));
+        // Statistiques par statut
+        Map<String, Long> stats = new HashMap<>();
+        stats.put("nonTraites", clientRepository.countByStatus(ClientStatus.NON_TRAITE));
+        stats.put("contactes", clientRepository.countByStatus(ClientStatus.CONTACTE));
+        stats.put("absents", clientRepository.countByStatus(ClientStatus.ABSENT));
+        stats.put("refus", clientRepository.countByStatus(ClientStatus.REFUS));
+
+        model.addAttribute("clients", clients);
+        model.addAttribute("callbackTasks", callbackTasks);
         model.addAttribute("stats", stats);
 
         return "agenda/index";

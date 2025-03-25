@@ -300,11 +300,16 @@
       <h5 class="section-title">Résumé du questionnaire</h5>
       <div class="row">
         <div class="col-md-6">
-          <div class="info-label">1. Prise de contact:</div>
+          <div class="info-label">Statut actuel:</div>
           <div class="info-value">
-            <span class="response-highlight" th:text="${client.priseDeContact != null ? client.priseDeContact.displayName : 'Non renseigné'}">Contacté</span>
+            <span class="badge"
+                  th:classappend="${client.status == T(com.example.projetpfe.entity.ClientStatus).NON_TRAITE ? 'bg-warning' :
+                                   client.status == T(com.example.projetpfe.entity.ClientStatus).CONTACTE ? 'bg-success' :
+                                   client.status == T(com.example.projetpfe.entity.ClientStatus).ABSENT ? 'bg-info' : 'bg-danger'}"
+                  th:text="${client.status.displayName}">
+              Status
+            </span>
           </div>
-
           <div class="info-label">2. Raison du non-renouvellement du crédit:</div>
           <div class="info-value">
             <span class="response-highlight" th:text="${client.raisonNonRenouvellement != null ? client.raisonNonRenouvellement.displayName : 'Non renseigné'}">Taux d'intérêt élevé</span>

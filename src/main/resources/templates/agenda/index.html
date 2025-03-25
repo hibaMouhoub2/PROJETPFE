@@ -267,7 +267,7 @@
         <div class="d-flex justify-content-between align-items-center">
           <div>
             <h6 class="mb-0">À traiter</h6>
-            <h2 class="mt-2 mb-0" th:text="${stats.pending}">0</h2>
+            <h2 class="mt-2 mb-0" th:text="${stats.nonTraites}">0</h2>
           </div>
           <div>
             <i class="fas fa-tasks fa-3x opacity-50"></i>
@@ -280,7 +280,7 @@
         <div class="d-flex justify-content-between align-items-center">
           <div>
             <h6 class="mb-0">À rappeler</h6>
-            <h2 class="mt-2 mb-0" th:text="${stats.callback}">0</h2>
+            <h2 class="mt-2 mb-0" th:text="${stats.absents}">0</h2>
           </div>
           <div>
             <i class="fas fa-phone-alt fa-3x opacity-50"></i>
@@ -293,7 +293,7 @@
         <div class="d-flex justify-content-between align-items-center">
           <div>
             <h6 class="mb-0">Traités</h6>
-            <h2 class="mt-2 mb-0" th:text="${stats.completed}">0</h2>
+            <h2 class="mt-2 mb-0" th:text="${stats.contactes}">0</h2>
           </div>
           <div>
             <i class="fas fa-check-circle fa-3x opacity-50"></i>
@@ -303,17 +303,17 @@
     </div>
   </div>
 
-  <!-- Pending Tasks Card -->
+
   <div class="card">
     <div class="card-header bg-primary-custom text-white">
       <i class="fas fa-tasks me-2"></i>Clients à traiter
     </div>
     <div class="card-body">
-      <div th:if="${#lists.isEmpty(pendingTasks)}" class="alert alert-info">
+      <div th:if="${#lists.isEmpty(clients.nonTraites)}" class="alert alert-info">
         <i class="fas fa-info-circle me-2"></i>Aucun client à traiter pour le moment.
       </div>
 
-      <div class="table-responsive" th:unless="${#lists.isEmpty(pendingTasks)}">
+      <div class="table-responsive" th:unless="${#lists.isEmpty(clients.nonTraites)}">
         <table class="table table-striped table-hover">
           <thead>
           <tr>
@@ -324,15 +324,15 @@
           </tr>
           </thead>
           <tbody>
-          <tr th:each="task : ${pendingTasks}">
-            <td th:text="${task.clientName}">Nom du client</td>
-            <td th:text="${task.phoneNumber}">+212 600000000</td>
-            <td th:text="${task.email}">client@example.com</td>
+          <tr th:each="client : ${clients.nonTraites}">
+            <td th:text="${client.prenom + '' + client.nom}">Nom du client</td>
+            <td th:text="${client.telephone}">+212 600000000</td>
+            <td th:text="${client.email}">client@example.com</td>
             <td>
-              <a th:href="@{'/agenda/' + ${task.id}}" class="btn btn-sm btn-primary">
+              <a th:href="@{'/clients/' + ${client.id}}" class="btn btn-sm btn-primary">
                 <i class="fas fa-eye me-1"></i>Détails
               </a>
-              <a th:href="@{'/agenda/' + ${task.id} + '/update'}" class="btn btn-sm btn-warning">
+              <a th:href="@{'/clients/' + ${client.id} + '/status'}" class="btn btn-sm btn-warning">
                 <i class="fas fa-edit me-1"></i>Traiter
               </a>
             </td>

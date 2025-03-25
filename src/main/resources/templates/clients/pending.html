@@ -280,7 +280,7 @@
                         <th>Prénom</th>
                         <th>Téléphone</th>
                         <th>Email</th>
-                        <th>Prise de contact</th>
+                        <th>Statut</th>
                         <th>Créé le</th>
                         <th>Actions</th>
                     </tr>
@@ -291,7 +291,11 @@
                         <td th:text="${client.prenom}">Prénom</td>
                         <td th:text="${client.telephone}">+212 600000000</td>
                         <td th:text="${client.email ?: '-'}">email@example.com</td>
-                        <td th:text="${client.priseDeContact != null ? client.priseDeContact.displayName : '-'}">Contacté</td>
+                        <td>
+                          <span class="badge bg-warning" th:text="${client.status.displayName}">
+                            Non traité
+                          </span>
+                        </td>
                         <td th:text="${#temporals.format(client.createdAt, 'dd/MM/yyyy HH:mm')}">01/01/2023</td>
                         <td>
                             <div class="btn-group">
